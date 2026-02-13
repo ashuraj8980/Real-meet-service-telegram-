@@ -206,12 +206,25 @@
             const name = document.getElementById('fullName').value;
             const city = document.getElementById('city').value;
             const loc = document.getElementById('location').value;
+            const type = document.getElementById('type').value;
+            const age = document.getElementById('age').value || "18-25";
 
             if(!name.trim() || !city.trim() || !loc.trim()) {
                 alert("Please provide your Name, City & Location to proceed.");
                 return;
             }
-            window.location.href = "https://t.me/Xnehhaa";
+
+            // Exactly as requested
+            const message = `Hello RealMeet, I want to join a call for meeting. Here are my details:
+👤 Name: ${name}
+📍 City: ${city}
+🏨 Meet Location: ${loc}
+👸 Girl Type: ${type}
+🎂 Age Preference: ${age}
+I am ready for the initial call. Please tell me the payment process for the ₹100 call charge.`;
+
+            const encodedMsg = encodeURIComponent(message);
+            window.location.href = `https://t.me/Xnehhaa?text=${encodedMsg}`;
         }
     </script>
 </body>
