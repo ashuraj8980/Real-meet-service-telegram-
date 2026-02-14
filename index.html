@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Meet | VIP Direct Gateway</title>
+    <title>Real Meet | VIP Executive Gateway</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -54,6 +54,21 @@
             background: linear-gradient(to top, #0f172a 0%, transparent 100%);
         }
 
+        .top-status {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
         .booking-area {
             padding: 25px;
             margin-top: -60px; 
@@ -65,23 +80,16 @@
         .title { font-size: 28px; font-weight: 800; letter-spacing: -1px; }
         .title span { color: #3b82f6; }
 
-        .input-wrap { margin-bottom: 15px; }
-        .input-wrap label { font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; margin-left: 4px; }
-        
-        .luxury-input {
-            width: 100%;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 12px 15px;
-            border-radius: 12px;
-            color: white;
-            font-size: 13px;
-            margin-top: 5px;
-            outline: none;
-            transition: 0.3s;
+        .service-pill {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            padding: 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            color: #93c5fd;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
-
-        .luxury-input:focus { border-color: #3b82f6; background: rgba(255,255,255,0.06); }
 
         .connect-btn {
             width: 100%;
@@ -91,6 +99,7 @@
             border-radius: 16px;
             font-weight: 800;
             font-size: 14px;
+            letter-spacing: 1px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -98,12 +107,10 @@
             transition: 0.3s;
             cursor: pointer;
             border: none;
-            margin-top: 10px;
+            text-decoration: none;
         }
 
         .connect-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0, 136, 204, 0.4); }
-
-        .status-dot { color: #4ade80; font-size: 10px; font-weight: 700; position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.4); padding: 4px 12px; border-radius: 20px; backdrop-filter: blur(5px); }
     </style>
 </head>
 <body>
@@ -112,7 +119,7 @@
         <div class="photo-frame">
             <img src="pic1.jpg" alt="VIP Profile">
             <div class="overlay"></div>
-            <div class="status-dot">● VERIFIED ONLINE</div>
+            <div class="top-status">● VERIFIED ONLINE</div>
         </div>
 
         <div class="booking-area">
@@ -121,79 +128,29 @@
                 <p class="text-[11px] text-blue-400 font-bold uppercase tracking-[2px]">Service available in your city</p>
             </div>
 
-            <div class="space-y-4">
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="input-wrap">
-                        <label>Full Name</label>
-                        <input type="text" id="fullName" placeholder="Rahul" class="luxury-input">
-                    </div>
-                    <div class="input-wrap">
-                        <label>Current City</label>
-                        <input type="text" id="city" placeholder="Mumbai" class="luxury-input">
-                    </div>
+            <div class="service-pill">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="font-bold uppercase text-[9px]">Meeting Protocol</span>
                 </div>
-
-                <div class="input-wrap">
-                    <label>Preferred Meet Location</label>
-                    <input type="text" id="location" placeholder="Hotel Name / Area" class="luxury-input">
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="input-wrap">
-                        <label>Girl Type</label>
-                        <select id="type" class="luxury-input">
-                            <option>Office Girl</option>
-                            <option>Desi Girl</option>
-                            <option>Married Women</option>
-                            <option>Russian Girl</option>
-                            <option>NRI / High Class</option>
-                            <option>College Student</option>
-                            <option>Housewife</option>
-                        </select>
-                    </div>
-                    <div class="input-wrap">
-                        <label>Age Preference</label>
-                        <input type="text" id="age" placeholder="18-25" class="luxury-input">
-                    </div>
-                </div>
+                100% Satisfaction & Discreet Service. Click below to start your private verification call.
             </div>
 
-            <button onclick="handleConnect()" class="connect-btn">
+            <a id="tgLink" href="#" class="connect-btn">
                 <i class="fab fa-telegram-plane text-xl"></i>
                 CONNECT NOW TELEGRAM
-            </button>
+            </a>
 
-            <p class="text-[8px] text-center text-slate-600 mt-6 font-bold uppercase tracking-[3px]">Secure & Private Connection</p>
+            <div class="mt-8 text-center">
+                <p class="text-[8px] text-slate-600 font-bold tracking-[4px] uppercase">Secure Encrypted Session • 2026</p>
+            </div>
         </div>
     </div>
 
     <script>
-        function handleConnect() {
-            const name = document.getElementById('fullName').value;
-            const city = document.getElementById('city').value;
-            const loc = document.getElementById('location').value;
-            const type = document.getElementById('type').value;
-            const age = document.getElementById('age').value || "18-25";
-
-            if(!name.trim() || !city.trim() || !loc.trim()) {
-                alert("Please fill in your Name, City, and Location.");
-                return;
-            }
-
-            // Professional message as requested
-            const message = `Hello RealMeet, I want to join a call for meeting. Here are my details:
-👤 Name: ${name}
-📍 City: ${city}
-🏨 Meet Location: ${loc}
-👸 Girl Type: ${type}
-🎂 Age Preference: ${age}
-
-I am ready for the initial call. Please tell me the payment process for the ₹100 call charge.
-
-Thanks for messaging wait for response from my side.`;
-
-            window.location.href = `https://t.me/Xnehhaa?text=${encodeURIComponent(message)}`;
-        }
+        const msg = "Hello RealMeet, I am interested in your premium VIP services. I have seen the profile and I am ready to follow the protocol.i am waiting for your instant response.";
+        const tgID = "https://t.me/Xnehhaa";
+        document.getElementById('tgLink').href = tgID + "?text=" + encodeURIComponent(msg);
     </script>
 </body>
 </html>
