@@ -3,154 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Meet | VIP Executive Gateway</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Real Meet Service | Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #020617; 
-            color: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+        * {
             margin: 0;
-            padding: 10px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
         }
 
-        .premium-card {
-            background: #0f172a;
-            width: 100%;
-            max-width: 400px;
-            border-radius: 30px;
+        body {
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #1e293b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
             overflow: hidden;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .photo-frame {
-            width: 100%;
-            height: 420px;
-            position: relative;
-            background: #000;
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .photo-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            object-position: center 10%;
-        }
-
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(to top, #0f172a 0%, transparent 100%);
-        }
-
-        .top-status {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            padding: 5px 12px;
-            border-radius: 50px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #4ade80;
-            border: 1px solid rgba(74, 222, 128, 0.3);
-        }
-
-        .booking-area {
-            padding: 25px;
-            margin-top: -60px; 
-            position: relative;
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
             z-index: 10;
         }
 
-        .header-box { margin-bottom: 25px; }
-        .title { font-size: 28px; font-weight: 800; letter-spacing: -1px; }
-        .title span { color: #3b82f6; }
-
-        .service-pill {
-            background: rgba(59, 130, 246, 0.05);
-            border: 1px solid rgba(59, 130, 246, 0.1);
-            padding: 12px;
-            border-radius: 15px;
-            font-size: 11px;
-            color: #93c5fd;
-            margin-bottom: 20px;
-            line-height: 1.6;
+        .profile-card {
+            margin-bottom: 30px;
         }
 
-        .connect-btn {
+        .img-holder {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #4ade80, #38bdf8); /* Greenish-Blue Glow */
+            box-shadow: 0 0 40px rgba(74, 222, 128, 0.4);
+        }
+
+        .profile-img {
             width: 100%;
-            background: linear-gradient(135deg, #0088cc, #006699);
-            color: white;
-            padding: 18px;
-            border-radius: 16px;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0f172a;
+            display: block;
+        }
+
+        h1 {
+            font-size: 28px;
             font-weight: 800;
-            font-size: 14px;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .city-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            color: #4ade80;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .info-stack {
+            margin-bottom: 30px;
+        }
+
+        .glass-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 18px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .glass-box p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #d1d5db;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 18px;
             text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: 0.3s all;
+            border: none;
         }
 
-        .connect-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0, 136, 204, 0.4); }
+        /* Green Button for Personal Message */
+        .btn-green {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+            text-transform: uppercase;
+        }
+
+        .btn-green:hover {
+            background: #16a34a;
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.6);
+        }
+
+        .btn-tg {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-tg:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .live-now {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #4ade80;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #4ade80;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="premium-card">
-        <div class="photo-frame">
-            <img src="pic1.jpg" alt="VIP Profile">
-            <div class="overlay"></div>
-            <div class="top-status">● VERIFIED ONLINE</div>
+    <div class="container">
+        <div class="profile-card">
+            <div class="img-holder">
+                <img src="pic1.jpg" alt="Real Meet Profile" class="profile-img">
+            </div>
+            <h1>Real Meet Service</h1>
+            <div class="city-tag">Premium Verified</div>
         </div>
 
-        <div class="booking-area">
-            <div class="header-box">
-                <h1 class="title">Real<span>Meet</span></h1>
-                <p class="text-[11px] text-blue-400 font-bold uppercase tracking-[2px]">Service available in your city</p>
+        <div class="info-stack">
+            <div class="glass-box">
+                <p>We provide <span class="highlight">100% real and genuine</span> services in your city. Your satisfaction is our main priority.</p>
             </div>
+        </div>
 
-            <div class="service-pill">
-                <div class="flex items-center gap-2 mb-1">
-                    <i class="fas fa-info-circle"></i>
-                    <span class="font-bold uppercase text-[9px]">Meeting Protocol</span>
-                </div>
-                100% Satisfaction & Discreet Service. Click below to start your private verification call.
-            </div>
+        <a href="https://t.me/xkhushii" class="btn btn-green">
+            SEND PERSONAL MESSAGE
+        </a>
 
-            <a id="tgLink" href="#" class="connect-btn">
-                <i class="fab fa-telegram-plane text-xl"></i>
-                CONNECT NOW TELEGRAM
-            </a>
+        <a href="https://t.me/realmeetserviice" class="btn btn-tg">
+            JOIN OFFICIAL CHANNEL
+        </a>
 
-            <div class="mt-8 text-center">
-                <p class="text-[8px] text-slate-600 font-bold tracking-[4px] uppercase">Secure Encrypted Session • 2026</p>
-            </div>
+        <div class="live-now">
+            <div class="dot"></div> Currently Active & Available
         </div>
     </div>
 
-    <script>
-        const msg = "Hello RealMeet, I am interested in your premium VIP services. I have seen the profile and I am ready to follow the protocol.i am waiting for your instant response.";
-        const tgID = "https://t.me/Xnehhaa";
-        document.getElementById('tgLink').href = tgID + "?text=" + encodeURIComponent(msg);
-    </script>
 </body>
 </html>
