@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Meet Service | Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <title>Real Meet | Elite Verified Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,9 +14,8 @@
         }
 
         body {
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #1e293b);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a, #020617);
+            background-size: cover;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -25,31 +24,36 @@
             overflow: hidden;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Subtle animated background glow */
+        body::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(56, 189, 248, 0.1);
+            filter: blur(100px);
+            top: 10%;
+            left: 10%;
+            z-index: 1;
         }
 
         .container {
             width: 90%;
-            max-width: 400px;
+            max-width: 420px;
             text-align: center;
             z-index: 10;
         }
 
-        .profile-card {
-            margin-bottom: 30px;
-        }
-
+        /* Premium Platinum Ring Animation */
         .img-holder {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             margin: 0 auto 20px;
             border-radius: 50%;
-            padding: 5px;
-            background: linear-gradient(45deg, #4ade80, #38bdf8); /* Greenish-Blue Glow */
-            box-shadow: 0 0 40px rgba(74, 222, 128, 0.4);
+            padding: 4px;
+            background: linear-gradient(white, #38bdf8, #0088cc);
+            box-shadow: 0 0 30px rgba(0, 136, 204, 0.3);
+            position: relative;
         }
 
         .profile-img {
@@ -57,145 +61,176 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #0f172a;
-            display: block;
+            border: 4px solid #020617;
+        }
+
+        .header-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 5px;
         }
 
         h1 {
             font-size: 28px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 5px;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .city-tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 15px;
+        /* Official Blue Tick SVG */
+        .blue-tick {
+            width: 24px;
+            height: 24px;
+            fill: #0088cc;
+            filter: drop-shadow(0 0 5px rgba(0, 136, 204, 0.5));
+        }
+
+        .badge-platinum {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #4ade80;
+            letter-spacing: 1.5px;
+            color: #94a3b8;
             display: inline-block;
             margin-bottom: 25px;
         }
 
-        .info-stack {
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 22px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .glass-box {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 18px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-        }
-
-        .glass-box p {
+        .glass-card p {
             font-size: 14px;
-            line-height: 1.5;
-            color: #d1d5db;
+            line-height: 1.6;
+            color: #cbd5e1;
+            font-weight: 300;
         }
 
         .highlight {
             color: #fff;
             font-weight: 600;
+            border-bottom: 1.5px solid #0088cc;
         }
 
-        .btn {
+        /* Ultra Professional Action Button */
+        .btn-join {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 18px;
-            margin-bottom: 15px;
-            border-radius: 18px;
+            padding: 20px;
+            background: #0088cc;
+            color: #fff;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
-            transition: 0.3s all;
-            border: none;
-        }
-
-        /* Green Button for Personal Message */
-        .btn-green {
-            background: #22c55e;
-            color: #fff;
-            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+            font-size: 15px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
+            margin-bottom: 15px;
+            animation: pulse-btn 2.5s infinite;
         }
 
-        .btn-green:hover {
-            background: #16a34a;
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.6);
+        @keyframes pulse-btn {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); box-shadow: 0 15px 40px rgba(0, 136, 204, 0.6); }
+            100% { transform: scale(1); }
         }
 
-        .btn-tg {
-            background: rgba(255, 255, 255, 0.1);
+        .btn-join:hover {
+            background: #0099e6;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
             color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .btn-tg:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .live-now {
-            margin-top: 15px;
+        .status-bar {
+            margin-top: 20px;
             font-size: 12px;
-            color: #4ade80;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
+            color: #4ade80;
+            font-weight: 500;
         }
 
-        .dot {
+        .indicator {
             width: 8px;
             height: 8px;
             background: #4ade80;
             border-radius: 50%;
             box-shadow: 0 0 10px #4ade80;
-            animation: pulse 1.5s infinite;
+            animation: blink 1.2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.5; }
-            100% { transform: scale(1); opacity: 1; }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="profile-card">
+        <div class="profile-section">
             <div class="img-holder">
-                <img src="pic1.jpg" alt="Real Meet Profile" class="profile-img">
+                <img src="pic1.jpg" alt="Verified Profile" class="profile-img">
             </div>
-            <h1>Real Meet Service</h1>
-            <div class="city-tag">Premium Verified</div>
+            
+            <div class="header-box">
+                <h1>Real Meet Service</h1>
+                <svg class="blue-tick" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+                </svg>
+            </div>
+            <div class="badge-platinum">Elite Platinum Member</div>
         </div>
 
-        <div class="info-stack">
-            <div class="glass-box">
-                <p>We provide <span class="highlight">100% real and genuine</span> services in your city. Your satisfaction is our main priority.</p>
-            </div>
+        <div class="glass-card">
+            <p>Access our <span class="highlight">Exclusive Portfolio</span> and available time slots. Join our private group to connect with verified profiles in your area.</p>
         </div>
 
-        <a href="https://t.me/xkhushii" class="btn btn-green">
-            SEND PERSONAL MESSAGE
+        <a href="https://t.me/+1-j0cENHTjVmNWFl" class="btn-join">
+            Join Group For Available Slots
         </a>
 
-        <a href="https://t.me/realmeetserviice" class="btn btn-tg">
-            JOIN OFFICIAL CHANNEL
+        <a href="https://t.me/realmeetserviice" class="btn-secondary">
+            View Official Channel
         </a>
 
-        <div class="live-now">
-            <div class="dot"></div> Currently Active & Available
+        <div class="status-bar">
+            <div class="indicator"></div> Verified Assistance Active
         </div>
     </div>
 
