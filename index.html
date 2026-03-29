@@ -14,7 +14,7 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1678492439977153'); 
+      fbq('init', '959631899852003'); 
       fbq('track', 'PageView');
     </script>
     
@@ -65,7 +65,6 @@
             border: 1px solid var(--primary-blue);
         }
 
-        /* Profile Picture Box (Added back) */
         .profile-wrapper {
             width: 110px; height: 110px;
             margin: 0 auto 15px;
@@ -109,12 +108,11 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); } 
         }
 
-        /* Compact SIDE Notification (No Image) */
         .notif-container {
             position: fixed;
             bottom: 20px;
-            right: -400px; /* Hidden off-screen to the right */
-            width: 260px; /* Small popup size */
+            right: -400px;
+            width: 260px;
             background: #FFFFFF;
             color: #111;
             padding: 15px;
@@ -122,7 +120,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             border-left: 5px solid var(--primary-blue);
             z-index: 9999;
-            transition: right 0.8s cubic-bezier(0.19, 1, 0.22, 1); /* Professional slide-in */
+            transition: right 0.8s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         .notif-container.show { right: 20px; }
@@ -146,7 +144,6 @@
 
     <div class="main-card">
         <div class="verified-status">● VERIFIED PROFILE</div>
-        
         <div class="profile-wrapper">
             <img src="pic1.jpg" alt="Profile" class="profile-pic">
         </div>
@@ -193,7 +190,6 @@
             }, 5000);
         }
 
-        // Trigger logic
         setTimeout(showSideNotification, 3000);
         setInterval(showSideNotification, 16000);
     </script>
