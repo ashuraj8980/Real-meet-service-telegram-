@@ -15,7 +15,7 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '959631899852003'); 
-      // PageView yahan se hata diya gaya hai taaki open karne par count na ho
+      fbq('track', 'PageView');
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -100,6 +100,7 @@
             font-weight: 800; font-size: 16px;
             text-transform: uppercase;
             animation: pulse-flash 1.8s infinite;
+            cursor: pointer;
         }
 
         @keyframes pulse-flash { 
@@ -153,12 +154,22 @@
             <div class="feature-item">24/7 Secure Booking & Support</div>
         </div>
         
-        <a href="https://t.me/+T5BGr73JbMpjMTM1" onclick="fbq('track', 'Lead');" class="join-btn">
+        <a href="https://t.me/+T5BGr73JbMpjMTM1" id="joinButton" class="join-btn">
             JOIN FOR MEETING
         </a>
     </div>
 
     <script>
+        // Track Lead only once per session
+        let leadTracked = false;
+        document.getElementById('joinButton').addEventListener('click', function() {
+            if (!leadTracked) {
+                fbq('track', 'Lead');
+                leadTracked = true; // Prevents multiple leads from the same user session
+                console.log("Lead tracked successfully.");
+            }
+        });
+
         const uniqueMessages = [
             { n: "Sneha", c: "Mumbai", m: "I'm free now. Text me or call ❤️" },
             { n: "Priya", c: "Delhi", m: "Available at your location. Confirm now 💋" },
