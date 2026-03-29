@@ -15,7 +15,7 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '959631899852003'); 
-      fbq('track', 'PageView');
+      // PageView yahan se hata diya gaya hai taaki open karne par count na ho
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -124,13 +124,8 @@
         }
 
         .notif-container.show { right: 20px; }
-
-        .notif-body b { 
-            display: block; font-size: 14px; color: var(--primary-blue); margin-bottom: 4px; 
-        }
-        .notif-body p { 
-            margin: 0; font-size: 12px; font-weight: 500; color: #333; line-height: 1.3;
-        }
+        .notif-body b { display: block; font-size: 14px; color: var(--primary-blue); margin-bottom: 4px; }
+        .notif-body p { margin: 0; font-size: 12px; font-weight: 500; color: #333; line-height: 1.3; }
     </style>
 </head>
 <body>
@@ -173,23 +168,18 @@
         ];
 
         let msgIndex = 0;
-
         function showSideNotification() {
             if (document.querySelector('.notif-container.show')) return;
-
             const data = uniqueMessages[msgIndex % uniqueMessages.length];
             document.getElementById('notif-title').innerText = `${data.n} (${data.c})`;
             document.getElementById('notif-msg').innerText = data.m;
-
             const notif = document.getElementById('notification');
             notif.classList.add('show');
-
             setTimeout(() => {
                 notif.classList.remove('show');
                 msgIndex++;
             }, 5000);
         }
-
         setTimeout(showSideNotification, 3000);
         setInterval(showSideNotification, 16000);
     </script>
