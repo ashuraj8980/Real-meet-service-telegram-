@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Club | Private Concierge</title>
+    <title>Elite Club | Premium Concierge</title>
     
     <script>
       !function(f,b,e,v,n,t,s)
@@ -14,72 +14,60 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      
-      fbq('init', '1678492439977153'); // Aapki Pixel ID yahan hai
+      fbq('init', '1678492439977153'); 
       fbq('track', 'PageView');
     </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" 
-             src="https://www.facebook.com/tr?id=1678492439977153&ev=PageView&noscript=1"/>
-    </noscript>
-
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #2ecc71; /* Electric Green */
-            --accent: #ff1a4d; /* Crimson Accent */
-            --bg-dark: #000000;
-            --glass-bg: rgba(10, 10, 10, 0.93);
+            --bg-deep-blue: #0A192F;
+            --primary-blue: #007BFF;
+            --glass-blue: rgba(16, 36, 68, 0.95);
+            --accent-light-blue: #5AC8FA;
+            --text-main: #FFFFFF;
+            --text-secondary: #C7D1E8;
         }
 
         body {
             margin: 0; padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-dark);
-            color: #fff;
+            background-color: var(--bg-deep-blue);
+            color: var(--text-main);
             display: flex; justify-content: center; align-items: center;
             min-height: 100vh;
             overflow: hidden;
         }
 
-        /* Subtle Background Blur */
-        .bg-img {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('pic1.jpg') no-repeat center center;
-            background-size: cover;
-            filter: blur(15px) brightness(0.2);
-            z-index: -1;
-        }
-
         .main-card {
             width: 90%; max-width: 380px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 40px;
+            background: var(--glass-blue);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 35px;
             padding: 35px 20px;
             text-align: center;
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
-            position: relative;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+            z-index: 10;
         }
 
         .verified-status {
             font-size: 10px;
-            background: rgba(46, 204, 113, 0.1);
-            color: var(--primary);
-            padding: 4px 15px;
+            background: rgba(0, 123, 255, 0.1);
+            color: var(--accent-light-blue);
+            padding: 5px 15px;
             border-radius: 50px;
             letter-spacing: 2px;
-            font-weight: 800;
+            font-weight: 700;
             display: inline-block;
             margin-bottom: 20px;
-            border: 1px solid var(--primary);
+            border: 1px solid var(--primary-blue);
         }
 
+        /* Profile Picture Box (Added back) */
         .profile-wrapper {
-            width: 120px; height: 120px;
+            width: 110px; height: 110px;
             margin: 0 auto 15px;
             position: relative;
         }
@@ -88,193 +76,126 @@
             width: 100%; height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #111;
-            padding: 3px;
-            background: linear-gradient(135deg, #1a1a1a, #000);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+            border: 3px solid var(--primary-blue);
+            padding: 2px;
+            background: #000;
         }
 
         .brand-logo {
             font-family: 'Syncopate', sans-serif;
             font-size: 24px; letter-spacing: 5px; font-weight: 700;
-            margin-bottom: 30px;
-            color: #fff;
+            margin-bottom: 25px;
         }
 
-        .features-list { text-align: left; margin-bottom: 35px; padding: 0 5px; }
-        .feature-item { font-size: 14px; margin-bottom: 12px; display: flex; align-items: center; color: #ddd; }
-        .feature-item::before { content: '✦'; color: var(--accent); margin-right: 15px; font-weight: 800; font-size: 16px; }
+        .features-list { text-align: left; margin-bottom: 30px; padding: 0 10px; }
+        .feature-item { font-size: 13px; margin-bottom: 12px; color: var(--text-secondary); display: flex; align-items: center; }
+        .feature-item::before { content: '✦'; color: var(--primary-blue); margin-right: 10px; font-weight: bold; }
 
-        /* Flashing Action Button */
         .join-btn {
             display: block;
-            background: linear-gradient(135deg, var(--primary), #27ae60);
+            background: linear-gradient(135deg, var(--primary-blue), #0056b3);
             color: #fff;
-            padding: 22px;
-            border-radius: 18px;
+            padding: 20px;
+            border-radius: 15px;
             text-decoration: none;
-            font-weight: 800; font-size: 18px;
-            letter-spacing: 1px;
+            font-weight: 800; font-size: 16px;
             text-transform: uppercase;
-            transition: 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: pulse-flash 1.5s infinite;
+            animation: pulse-flash 1.8s infinite;
         }
 
-        @keyframes pulse-flash { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
-        .join-btn:active { transform: scale(0.97); }
-        .join-btn::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); transform: rotate(30deg); animation: glint 3s infinite; }
-        @keyframes glint { 0% { top: -150%; left: -150%; } 100% { top: 150%; left: 150%; } }
+        @keyframes pulse-flash { 
+            0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5); } 
+            70% { box-shadow: 0 0 0 12px rgba(0, 123, 255, 0); } 
+            100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); } 
+        }
 
-        /* Slow, Professional Notification */
+        /* Compact SIDE Notification (No Image) */
         .notif-container {
             position: fixed;
-            bottom: -150px; /* Start hidden */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 85%; max-width: 350px;
-            background: rgba(255, 255, 255, 0.98);
+            bottom: 20px;
+            right: -400px; /* Hidden off-screen to the right */
+            width: 260px; /* Small popup size */
+            background: #FFFFFF;
             color: #111;
-            padding: 12px 15px;
-            border-radius: 18px;
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.6);
-            display: flex; align-items: center; gap: 12px;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--primary-blue);
             z-index: 9999;
-            transition: bottom 0.8s cubic-bezier(0.19, 1, 0.22, 1); /* Slow entry */
+            transition: right 0.8s cubic-bezier(0.19, 1, 0.22, 1); /* Professional slide-in */
         }
 
-        .notif-container.show { bottom: 25px; }
-        .notif-avatar { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
-        .notif-body { flex: 1; }
-        .notif-body b { display: block; font-size: 14px; color: var(--accent); margin-bottom: 2px; }
-        .notif-body p { margin: 0; font-size: 13px; font-weight: 500; color: #111; }
-        .notif-time { font-size: 10px; color: #777; margin-top: 3px; }
+        .notif-container.show { right: 20px; }
 
+        .notif-body b { 
+            display: block; font-size: 14px; color: var(--primary-blue); margin-bottom: 4px; 
+        }
+        .notif-body p { 
+            margin: 0; font-size: 12px; font-weight: 500; color: #333; line-height: 1.3;
+        }
     </style>
 </head>
 <body>
 
-    <div class="bg-img"></div>
-
     <div id="notification" class="notif-container">
-        <img src="pic1.jpg" id="notif-img" alt="Active Profile" class="notif-avatar">
         <div class="notif-body">
-            <b id="notif-title">Waiting...</b>
-            <p id="notif-msg">I'm waiting baby... ❤️</p>
-            <div class="notif-time">Active Now</div>
+            <b id="notif-title">Elite Update</b>
+            <p id="notif-msg">Checking nearby availability...</p>
         </div>
-        <div style="font-size: 18px;">💬</div>
     </div>
 
     <div class="main-card">
-        <div class="verified-status">● VERIFIED EXCLUSIVE PROFILE</div>
-
+        <div class="verified-status">● VERIFIED PROFILE</div>
+        
         <div class="profile-wrapper">
             <img src="pic1.jpg" alt="Profile" class="profile-pic">
         </div>
 
         <div class="brand-logo">KHUSHI</div>
-
+        
         <div class="features-list">
-            <div class="feature-item">Exquisite & High Profile Staff</div>
-            <div class="feature-item">Verified Profiles & Real Pictures</div>
-            <div class="feature-item">Confidential Meetings in All Major Cities</div>
-            <div class="feature-item">Direct Call & Booking Discussion</div>
-            <div class="feature-item">Full Discreet Satisfaction Guaranteed</div>
+            <div class="feature-item">Full Satisfaction Guaranteed</div>
+            <div class="feature-item">Home & Hotel Service Available</div>
+            <div class="feature-item">Affordable Premium Pricing</div>
+            <div class="feature-item">High Professional Elite Staff</div>
+            <div class="feature-item">24/7 Secure Booking & Support</div>
         </div>
-
+        
         <a href="https://t.me/+T5BGr73JbMpjMTM1" onclick="fbq('track', 'Lead');" class="join-btn">
             JOIN FOR MEETING
         </a>
-        
-        <p style="font-size: 9px; color: #444; margin-top: 25px; letter-spacing: 2px; text-transform: uppercase;">
-            SECURE • DISCREET • PRIVATE CONCIERGE
-        </p>
     </div>
 
     <script>
-        // Array of unique messages
         const uniqueMessages = [
-            { n: "Sneha", c: "Mumbai", m: "Kab aarhe ਹੋ milne jaan? 🔥" },
-            { n: "Priya", c: "Delhi", m: "I'm free now. Text me or call ❤️" },
-            { n: "Anjali", c: "Bangalore", m: "Ready for a high-profile meeting? 😉" },
-            { n: "Riya", c: "Pune", m: "Hotel room booked. Kab aaoge baby? 💋" },
-            { n: "Ishani", c: "Kolkata", m: "Sir, staff available at your location." },
-            { n: "Kavya", c: "Hyderabad", m: "I'm waiting... full satisfaction guaranteed." },
-            { n: "Simran", c: "Gurgaon", m: "At hotel lobby. Call 💋 for discussion" },
-            { n: "Mehak", c: "Chandigarh", m: "Baby, full fun guaranteed tonight! 🔥" },
-            { n: "Nisha", c: "Lucknow", m: "Jaldi aao, i'm so free baby... 💋" },
-            { n: "Tanya", c: "Indore", m: "Direct meeting or call discussion?" },
-            { n: "Sonia", c: "Bhopal", m: "High-end elite staff ready for you." },
-            { n: "Aarti", c: "Nagpur", m: "I'm waiting at the hotel. 🔥" },
-            { n: "Muskan", c: "Agra", m: "Check my verified pic in group... 😉" },
-            { n: "Jiya", c: "Patna", m: "Meeting discussed only on call." },
-            { n: "Kiran", c: "Surat", m: "Sir, special discount for 1 hour. 😉" },
-            { n: "Neha", c: "Ahmedabad", m: "Baby jaldi reply karo, waiting..." },
-            { n: "Ritu", c: "Ghaziabad", m: "Ready for full private fun? 🔥" },
-            { n: "Shweta", c: "Noida", m: "Contact me now for booking." },
-            { n: "Kajal", c: "Visakhapatnam", m: "I'm a real model, check group." },
-            { n: "Pallavi", c: "Kanpur", m: "Waiting at the hotel lobby. Call me. 💋" },
-            { n: "Monika", c: "Thane", m: "Baby, let's discuss booking details." },
-            { n: "Sakshi", c: "Ludhiana", m: "Verified profiles ready, call now." },
-            { n: "Rashmi", c: "Nashik", m: "I'm a high profile student, available." },
-            { n: "Preeti", c: "Faridabad", m: "Sir, real pic and full fun guarantee." },
-            { n: "Dimple", c: "Meerut", m: "Kab aaoge baby? Jaldi aao 🔥" },
-            { n: "Tina", c: "Rajkot", m: "Call discuss directly with me." },
-            { n: "Payal", c: "Varanasi", m: "High professional staff ready." },
-            { n: "Sharmila", c: "Srinagar", m: "Aao, let's have some fun. 😉" },
-            { n: "Shruti", c: "Aurangabad", m: "Baby call me now free... ❤️" },
-            { n: "Deepa", c: "Amritsar", m: "Verified profiles for private fun." },
-            { n: "Swati", c: "Ranchi", m: "Available only at your location, call." }
+            { n: "Sneha", c: "Mumbai", m: "I'm free now. Text me or call ❤️" },
+            { n: "Priya", c: "Delhi", m: "Available at your location. Confirm now 💋" },
+            { n: "Anjali", c: "Bangalore", m: "Verified profiles ready for meeting 🔥" },
+            { n: "Riya", c: "Pune", m: "Waiting for you baby, text now ❤️" },
+            { n: "Kavya", c: "Hyderabad", m: "Real images verified. Call for booking." }
         ];
 
-        // 3. Random Image Logic setup
-        // Apni random images ki list yahan update karein:
-        const randomImages = [
-            "pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg"
-        ];
+        let msgIndex = 0;
 
-        let savedIndex = localStorage.getItem('notif_index');
-        let messageIndex;
+        function showSideNotification() {
+            if (document.querySelector('.notif-container.show')) return;
 
-        if (savedIndex === null) {
-            messageIndex = Math.floor(Math.random() * uniqueMessages.length);
-        } else {
-            messageIndex = parseInt(savedIndex);
-        }
+            const data = uniqueMessages[msgIndex % uniqueMessages.length];
+            document.getElementById('notif-title').innerText = `${data.n} (${data.c})`;
+            document.getElementById('notif-msg').innerText = data.m;
 
-        const notifBox = document.getElementById('notification');
-        const notifImg = document.getElementById('notif-img');
-        const notifTitle = document.getElementById('notif-title');
-        const notifMsg = document.getElementById('notif-msg');
-
-        function triggerUniqueNotification() {
-            if (messageIndex >= uniqueMessages.length) {
-                messageIndex = Math.floor(Math.random() * 5); 
-            }
-
-            const data = uniqueMessages[messageIndex];
-            notifTitle.innerText = `${data.n} from ${data.c}`;
-            notifMsg.innerText = data.m;
-
-            // 4. Set Random Image on each popup
-            const randImg = randomImages[Math.floor(Math.random() * randomImages.length)];
-            notifImg.src = randImg;
-
-            notifBox.classList.add('show');
-
-            messageIndex++;
-            localStorage.setItem('notif_index', messageIndex);
+            const notif = document.getElementById('notification');
+            notif.classList.add('show');
 
             setTimeout(() => {
-                notifBox.classList.remove('show');
+                notif.classList.remove('show');
+                msgIndex++;
             }, 5000);
         }
 
-        setTimeout(triggerUniqueNotification, 3000); // 3 seconds pehla slow popup
-        setInterval(triggerUniqueNotification, 16000); // Har 16 second mein doosra slow professional popup (anti-spam timing)
+        // Trigger logic
+        setTimeout(showSideNotification, 3000);
+        setInterval(showSideNotification, 16000);
     </script>
-
 </body>
 </html>
