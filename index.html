@@ -11,13 +11,18 @@
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
       n.queue=[];t=b.createElement(e);t.async=!0;
-      s=b.getElementsByTagName(e)[0];
+      t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+      
+      fbq('init', '1678492439977153'); // Aapki Pixel ID yahan hai
       fbq('track', 'PageView');
     </script>
-    
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+             src="https://www.facebook.com/tr?id=1678492439977153&ev=PageView&noscript=1"/>
+    </noscript>
+
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
@@ -29,14 +34,11 @@
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-dark);
             color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex; justify-content: center; align-items: center;
             min-height: 100vh;
             overflow: hidden;
         }
@@ -52,8 +54,7 @@
         }
 
         .main-card {
-            width: 90%;
-            max-width: 380px;
+            width: 90%; max-width: 380px;
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -78,15 +79,13 @@
         }
 
         .profile-wrapper {
-            width: 120px;
-            height: 120px;
+            width: 120px; height: 120px;
             margin: 0 auto 15px;
             position: relative;
         }
 
         .profile-pic {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #111;
@@ -97,36 +96,16 @@
 
         .brand-logo {
             font-family: 'Syncopate', sans-serif;
-            font-size: 24px;
-            letter-spacing: 5px;
-            font-weight: 700;
+            font-size: 24px; letter-spacing: 5px; font-weight: 700;
             margin-bottom: 30px;
             color: #fff;
         }
 
-        .features-list {
-            text-align: left;
-            margin-bottom: 35px;
-            padding: 0 5px;
-        }
+        .features-list { text-align: left; margin-bottom: 35px; padding: 0 5px; }
+        .feature-item { font-size: 14px; margin-bottom: 12px; display: flex; align-items: center; color: #ddd; }
+        .feature-item::before { content: '✦'; color: var(--accent); margin-right: 15px; font-weight: 800; font-size: 16px; }
 
-        .feature-item {
-            font-size: 14px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            color: #ddd;
-        }
-
-        .feature-item::before {
-            content: '✦';
-            color: var(--accent);
-            margin-right: 15px;
-            font-weight: 800;
-            font-size: 16px;
-        }
-
-        /* Flashing Green Action Button */
+        /* Flashing Action Button */
         .join-btn {
             display: block;
             background: linear-gradient(135deg, var(--primary), #27ae60);
@@ -134,78 +113,40 @@
             padding: 22px;
             border-radius: 18px;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 18px;
+            font-weight: 800; font-size: 18px;
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: 0.3s ease;
             position: relative;
             overflow: hidden;
-            animation: pulse-flash 1.5s infinite; /* Pulsing effect */
+            animation: pulse-flash 1.5s infinite;
         }
 
-        @keyframes pulse-flash {
-            0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
-        }
+        @keyframes pulse-flash { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
+        .join-btn:active { transform: scale(0.97); }
+        .join-btn::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); transform: rotate(30deg); animation: glint 3s infinite; }
+        @keyframes glint { 0% { top: -150%; left: -150%; } 100% { top: 150%; left: 150%; } }
 
-        .join-btn:active {
-            transform: scale(0.97);
-        }
-
-        /* Continuous Glint Effect */
-        .join-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-            transform: rotate(30deg);
-            animation: glint 3s infinite;
-        }
-
-        @keyframes glint {
-            0% { top: -150%; left: -150%; }
-            100% { top: 150%; left: 150%; }
-        }
-
-        /* Bottom-Up Chat Notification with Patch Girl Pic */
+        /* Slow, Professional Notification */
         .notif-container {
             position: fixed;
             bottom: -150px; /* Start hidden */
             left: 50%;
             transform: translateX(-50%);
-            width: 85%;
-            max-width: 350px;
+            width: 85%; max-width: 350px;
             background: rgba(255, 255, 255, 0.98);
             color: #111;
             padding: 12px 15px;
             border-radius: 18px;
             box-shadow: 0 -10px 40px rgba(0,0,0,0.6);
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            display: flex; align-items: center; gap: 12px;
             z-index: 9999;
-            transition: bottom 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: bottom 0.8s cubic-bezier(0.19, 1, 0.22, 1); /* Slow entry */
         }
 
         .notif-container.show { bottom: 25px; }
-
-        .notif-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-            object-fit: cover;
-        }
-
-        .notif-body {
-            flex: 1;
-        }
-
+        .notif-avatar { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
+        .notif-body { flex: 1; }
         .notif-body b { display: block; font-size: 14px; color: var(--accent); margin-bottom: 2px; }
         .notif-body p { margin: 0; font-size: 13px; font-weight: 500; color: #111; }
         .notif-time { font-size: 10px; color: #777; margin-top: 3px; }
@@ -217,7 +158,7 @@
     <div class="bg-img"></div>
 
     <div id="notification" class="notif-container">
-        <img src="pic1.jpg" alt="Active Profile" class="notif-avatar">
+        <img src="pic1.jpg" id="notif-img" alt="Active Profile" class="notif-avatar">
         <div class="notif-body">
             <b id="notif-title">Waiting...</b>
             <p id="notif-msg">I'm waiting baby... ❤️</p>
@@ -253,7 +194,7 @@
     </div>
 
     <script>
-        // Array of 30+ unique messages with city, girl names and message body
+        // Array of unique messages
         const uniqueMessages = [
             { n: "Sneha", c: "Mumbai", m: "Kab aarhe ਹੋ milne jaan? 🔥" },
             { n: "Priya", c: "Delhi", m: "I'm free now. Text me or call ❤️" },
@@ -288,27 +229,28 @@
             { n: "Swati", c: "Ranchi", m: "Available only at your location, call." }
         ];
 
-        // Local Storage Logic for unique refresh notifications
-        // Check if messageIndex exists, if not, set to random starting point
+        // 3. Random Image Logic setup
+        // Apni random images ki list yahan update karein:
+        const randomImages = [
+            "pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg"
+        ];
+
         let savedIndex = localStorage.getItem('notif_index');
         let messageIndex;
 
         if (savedIndex === null) {
-            // First time visit: start random
             messageIndex = Math.floor(Math.random() * uniqueMessages.length);
         } else {
-            // Refreshed visit: use next index
             messageIndex = parseInt(savedIndex);
         }
 
         const notifBox = document.getElementById('notification');
+        const notifImg = document.getElementById('notif-img');
         const notifTitle = document.getElementById('notif-title');
         const notifMsg = document.getElementById('notif-msg');
 
         function triggerUniqueNotification() {
-            // Anti-repeat/Sequence logic (cycle through list)
             if (messageIndex >= uniqueMessages.length) {
-                // Restart cycle but slightly shuffled
                 messageIndex = Math.floor(Math.random() * 5); 
             }
 
@@ -316,24 +258,22 @@
             notifTitle.innerText = `${data.n} from ${data.c}`;
             notifMsg.innerText = data.m;
 
-            // Show with animation
+            // 4. Set Random Image on each popup
+            const randImg = randomImages[Math.floor(Math.random() * randomImages.length)];
+            notifImg.src = randImg;
+
             notifBox.classList.add('show');
 
-            // Save next index for refresh
             messageIndex++;
             localStorage.setItem('notif_index', messageIndex);
 
-            // Hide after 5 seconds
             setTimeout(() => {
                 notifBox.classList.remove('show');
             }, 5000);
         }
 
-        // Pehla unique message 3 seconds baad
-        setTimeout(triggerUniqueNotification, 3000);
-
-        // Har 16 seconds mein ek unique, slow, professional popup
-        setInterval(triggerUniqueNotification, 16000);
+        setTimeout(triggerUniqueNotification, 3000); // 3 seconds pehla slow popup
+        setInterval(triggerUniqueNotification, 16000); // Har 16 second mein doosra slow professional popup (anti-spam timing)
     </script>
 
 </body>
