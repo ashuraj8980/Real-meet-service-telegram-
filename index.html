@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Club | Premium Concierge</title>
+    <title>Elite Escort Meet-up | Premium Access</title>
     
     <script>
       !function(f,b,e,v,n,t,s)
@@ -14,185 +14,193 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '959631899852003'); 
+      fbq('init', '880376731680634'); 
       fbq('track', 'PageView');
     </script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-deep-blue: #0A192F;
-            --primary-blue: #007BFF;
-            --glass-blue: rgba(16, 36, 68, 0.95);
-            --accent-light-blue: #5AC8FA;
-            --text-main: #FFFFFF;
-            --text-secondary: #C7D1E8;
+            --primary-blue: #0062ff;
+            --bg-color: #f0f4f8;
+            --warning-red: #ff0000;
         }
 
         body {
             margin: 0; padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-deep-blue);
-            color: var(--text-main);
+            background: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
             display: flex; justify-content: center; align-items: center;
             min-height: 100vh;
-            overflow: hidden;
+            background-image: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
         }
 
-        .main-card {
-            width: 90%; max-width: 380px;
-            background: var(--glass-blue);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 35px;
+        .main-container {
+            width: 90%; max-width: 370px;
+            background: #ffffff;
+            border-radius: 30px;
             padding: 35px 20px;
             text-align: center;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
-            z-index: 10;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,98,255,0.1);
         }
 
-        .verified-status {
-            font-size: 10px;
-            background: rgba(0, 123, 255, 0.1);
-            color: var(--accent-light-blue);
-            padding: 5px 15px;
-            border-radius: 50px;
-            letter-spacing: 2px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 20px;
-            border: 1px solid var(--primary-blue);
-        }
-
-        .profile-wrapper {
-            width: 110px; height: 110px;
+        .img-box {
+            width: 125px; height: 125px;
             margin: 0 auto 15px;
-            position: relative;
-        }
-
-        .profile-pic {
-            width: 100%; height: 100%;
             border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary-blue);
-            padding: 2px;
-            background: #000;
+            border: 4px solid var(--primary-blue);
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
-        .brand-logo {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 24px; letter-spacing: 5px; font-weight: 700;
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .title {
+            font-size: 26px; font-weight: 800; color: var(--primary-blue);
+            margin-bottom: 5px; line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 13px; color: #555; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1.5px;
             margin-bottom: 25px;
         }
 
-        .features-list { text-align: left; margin-bottom: 30px; padding: 0 10px; }
-        .feature-item { font-size: 13px; margin-bottom: 12px; color: var(--text-secondary); display: flex; align-items: center; }
-        .feature-item::before { content: '✦'; color: var(--primary-blue); margin-right: 10px; font-weight: bold; }
+        .info-list {
+            text-align: left; background: #f4f9ff;
+            padding: 18px; border-radius: 18px;
+            margin-bottom: 20px; display: inline-block; width: 92%;
+        }
 
-        .join-btn {
+        .info-item {
+            font-size: 13px; margin-bottom: 10px; color: #333;
+            display: flex; align-items: center; font-weight: 600;
+        }
+
+        .info-item b { color: var(--primary-blue); margin-right: 12px; font-size: 18px; }
+
+        .timer-section { margin-bottom: 25px; }
+
+        .timer-text {
+            font-size: 15px; font-weight: 800; color: #d9534f;
+            margin-bottom: 10px; display: block;
+        }
+
+        .telegram-highlight {
+            font-size: 13px; color: #111; font-weight: 700;
+            background: #fff3cd; 
+            padding: 12px 15px;
+            border-radius: 12px; 
+            border: 2px solid #ffc107;
             display: block;
-            background: linear-gradient(135deg, var(--primary-blue), #0056b3);
-            color: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 800; font-size: 16px;
+            line-height: 1.4;
+        }
+
+        /* RED COLOR FOR IMPORTANT */
+        .important-tag {
+            color: var(--warning-red);
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        .btn-join {
+            display: block;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: #fff; text-decoration: none;
+            padding: 20px; border-radius: 15px;
+            font-weight: 800; font-size: 17px;
             text-transform: uppercase;
-            animation: pulse-flash 1.8s infinite;
-            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(46,204,113,0.3);
+            transition: 0.4s;
+            animation: pulse-green 1.5s infinite;
         }
 
-        @keyframes pulse-flash { 
-            0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5); } 
-            70% { box-shadow: 0 0 0 12px rgba(0, 123, 255, 0); } 
-            100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); } 
+        @keyframes pulse-green {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(46, 204, 113, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
         }
 
-        .notif-container {
-            position: fixed;
-            bottom: 20px;
-            right: -400px;
-            width: 260px;
-            background: #FFFFFF;
-            color: #111;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border-left: 5px solid var(--primary-blue);
-            z-index: 9999;
-            transition: right 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        .disabled {
+            background: #bbb !important;
+            animation: none !important;
+            cursor: not-allowed;
+            box-shadow: none !important;
+            opacity: 0.8;
         }
 
-        .notif-container.show { right: 20px; }
-        .notif-body b { display: block; font-size: 14px; color: var(--primary-blue); margin-bottom: 4px; }
-        .notif-body p { margin: 0; font-size: 12px; font-weight: 500; color: #333; line-height: 1.3; }
+        .footer { font-size: 11px; color: #999; margin-top: 18px; font-weight: 500; }
     </style>
 </head>
 <body>
 
-    <div id="notification" class="notif-container">
-        <div class="notif-body">
-            <b id="notif-title">Elite Update</b>
-            <p id="notif-msg">Checking nearby availability...</p>
-        </div>
-    </div>
-
-    <div class="main-card">
-        <div class="verified-status">● VERIFIED PROFILE</div>
-        <div class="profile-wrapper">
-            <img src="pic1.jpg" alt="Profile" class="profile-pic">
+    <div class="main-container">
+        <div class="img-box">
+            <img src="pic1.jpg" alt="Elite Profile">
         </div>
 
-        <div class="brand-logo">KHUSHI</div>
-        
-        <div class="features-list">
-            <div class="feature-item">Full Satisfaction Guaranteed</div>
-            <div class="feature-item">Home & Hotel Service Available</div>
-            <div class="feature-item">Affordable Premium Pricing</div>
-            <div class="feature-item">High Professional Elite Staff</div>
-            <div class="feature-item">24/7 Secure Booking & Support</div>
+        <div class="title">Biggest Escort Meet-up</div>
+        <div class="subtitle">Hotel • Flat • Room Meeting</div>
+
+        <div class="info-list">
+            <div class="info-item"><b>✦</b> 100% Safe, Secure & Private</div>
+            <div class="info-item"><b>✦</b> High-Class Professional Staff</div>
+            <div class="info-item"><b>✦</b> Multiple Age Groups (18-32)</div>
+            <div class="info-item"><b>✦</b> Instant Meeting Guaranteed</div>
         </div>
-        
-        <a href="https://t.me/+T5BGr73JbMpjMTM1" id="joinButton" class="join-btn">
-            JOIN FOR MEETING
+
+        <div class="timer-section">
+            <span class="timer-text" id="status">
+                Verifying Connection... <span id="seconds">15</span>s
+            </span>
+            <div class="telegram-highlight">
+                ⚠ <span class="important-tag">IMPORTANT</span>: Agar aapke pass Telegram hai tabhi link ka wait kijiye!
+            </div>
+        </div>
+
+        <a href="https://t.me/+cP0jxp7wi-5iNWE1" id="joinBtn" class="btn-join disabled">
+            Please Wait...
         </a>
+
+        <div class="footer">Premium Verified Service | 24/7 Available</div>
     </div>
 
     <script>
-        // Track Lead only once per session
-        let leadTracked = false;
-        document.getElementById('joinButton').addEventListener('click', function() {
-            if (!leadTracked) {
-                fbq('track', 'Lead');
-                leadTracked = true; // Prevents multiple leads from the same user session
-                console.log("Lead tracked successfully.");
+        let timeLeft = 15;
+        const btn = document.getElementById('joinBtn');
+        const secondsText = document.getElementById('seconds');
+        const statusText = document.getElementById('status');
+        let leadFired = false;
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            if(secondsText) secondsText.innerText = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                statusText.innerHTML = "Access Verified! Link is Live.";
+                statusText.style.color = "#27ae60";
+                btn.classList.remove('disabled');
+                btn.innerText = "Join Channel Now";
+            }
+        }, 1000);
+
+        // ASLI JOINING TRACKING LOGIC
+        btn.addEventListener('click', function(e) {
+            if(timeLeft > 0) {
+                // Agar timer khatam nahi hua toh click kaam nahi karega
+                e.preventDefault();
+            } else {
+                // Lead sirf tabhi fire hogi jab banda Link par click karega
+                if(!leadFired) {
+                    fbq('track', 'Lead'); 
+                    leadFired = true; 
+                    console.log("Lead tracked on click redirect.");
+                }
             }
         });
-
-        const uniqueMessages = [
-            { n: "Sneha", c: "Mumbai", m: "I'm free now. Text me or call ❤️" },
-            { n: "Priya", c: "Delhi", m: "Available at your location. Confirm now 💋" },
-            { n: "Anjali", c: "Bangalore", m: "Verified profiles ready for meeting 🔥" },
-            { n: "Riya", c: "Pune", m: "Waiting for you baby, text now ❤️" },
-            { n: "Kavya", c: "Hyderabad", m: "Real images verified. Call for booking." }
-        ];
-
-        let msgIndex = 0;
-        function showSideNotification() {
-            if (document.querySelector('.notif-container.show')) return;
-            const data = uniqueMessages[msgIndex % uniqueMessages.length];
-            document.getElementById('notif-title').innerText = `${data.n} (${data.c})`;
-            document.getElementById('notif-msg').innerText = data.m;
-            const notif = document.getElementById('notification');
-            notif.classList.add('show');
-            setTimeout(() => {
-                notif.classList.remove('show');
-                msgIndex++;
-            }, 5000);
-        }
-        setTimeout(showSideNotification, 3000);
-        setInterval(showSideNotification, 16000);
     </script>
 </body>
 </html>
