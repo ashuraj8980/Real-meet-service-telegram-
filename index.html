@@ -98,7 +98,6 @@
             line-height: 1.4;
         }
 
-        /* RED COLOR FOR IMPORTANT */
         .important-tag {
             color: var(--warning-red);
             font-weight: 900;
@@ -153,7 +152,7 @@
 
         <div class="timer-section">
             <span class="timer-text" id="status">
-                Verifying Connection... <span id="seconds">15</span>s
+                Verifying Connection... <span id="seconds">5</span>s
             </span>
             <div class="telegram-highlight">
                 ⚠ <span class="important-tag">IMPORTANT</span>: Agar aapke pass Telegram hai tabhi link ka wait kijiye!
@@ -168,7 +167,7 @@
     </div>
 
     <script>
-        let timeLeft = 15;
+        let timeLeft = 5; // Timer set to 5 Seconds
         const btn = document.getElementById('joinBtn');
         const secondsText = document.getElementById('seconds');
         const statusText = document.getElementById('status');
@@ -187,17 +186,14 @@
             }
         }, 1000);
 
-        // ASLI JOINING TRACKING LOGIC
         btn.addEventListener('click', function(e) {
             if(timeLeft > 0) {
-                // Agar timer khatam nahi hua toh click kaam nahi karega
                 e.preventDefault();
             } else {
-                // Lead sirf tabhi fire hogi jab banda Link par click karega
                 if(!leadFired) {
                     fbq('track', 'Lead'); 
                     leadFired = true; 
-                    console.log("Lead tracked on click redirect.");
+                    console.log("Lead tracked on click.");
                 }
             }
         });
