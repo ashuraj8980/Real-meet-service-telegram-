@@ -14,7 +14,7 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '880376731680634'); 
+      fbq('init', '1341696331130205'); 
       fbq('track', 'PageView');
     </script>
     
@@ -167,11 +167,11 @@
     </div>
 
     <script>
-        let timeLeft = 5; // Timer set to 5 Seconds
+        let timeLeft = 5;
         const btn = document.getElementById('joinBtn');
         const secondsText = document.getElementById('seconds');
         const statusText = document.getElementById('status');
-        let leadFired = false;
+        let leadFired = false; // Isse lead ek baar hi count hogi
 
         const timer = setInterval(() => {
             timeLeft--;
@@ -190,10 +190,11 @@
             if(timeLeft > 0) {
                 e.preventDefault();
             } else {
+                // Lead logic: Sirf pehli click par count hoga
                 if(!leadFired) {
                     fbq('track', 'Lead'); 
                     leadFired = true; 
-                    console.log("Lead tracked on click.");
+                    console.log("Lead fired on new Pixel ID: 1341696331130205");
                 }
             }
         });
