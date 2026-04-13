@@ -159,7 +159,7 @@
             </div>
         </div>
 
-        <a href="https://t.me/+cP0jxp7wi-5iNWE1" id="joinBtn" class="btn-join disabled">
+        <a href="https://t.me/xkhushii?text=I%20want%20real%20meet%20in%20my%20city" id="joinBtn" class="btn-join disabled">
             Please Wait...
         </a>
 
@@ -171,7 +171,7 @@
         const btn = document.getElementById('joinBtn');
         const secondsText = document.getElementById('seconds');
         const statusText = document.getElementById('status');
-        let leadFired = false; // Isse lead ek baar hi count hogi
+        let leadFired = false; 
 
         const timer = setInterval(() => {
             timeLeft--;
@@ -190,11 +190,10 @@
             if(timeLeft > 0) {
                 e.preventDefault();
             } else {
-                // Lead logic: Sirf pehli click par count hoga
                 if(!leadFired) {
                     fbq('track', 'Lead'); 
                     leadFired = true; 
-                    console.log("Lead fired on new Pixel ID: 1341696331130205");
+                    console.log("Lead fired on Pixel ID: 1341696331130205");
                 }
             }
         });
