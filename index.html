@@ -1,202 +1,638 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Escort Meet-up | Premium Access</title>
+    <title>Body Massage Therapist Jobs | Premium Hiring</title>
     
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1662010748275569'); 
-      fbq('track', 'PageView');
-    </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
+            --primary-green: #27ae60;
             --primary-blue: #0062ff;
+            --accent-gold: #f39c12;
             --bg-color: #f0f4f8;
-            --warning-red: #ff0000;
+            --dark-text: #1a1a2e;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            margin: 0; padding: 0;
             background: var(--bg-color);
             font-family: 'Poppins', sans-serif;
-            display: flex; justify-content: center; align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
             min-height: 100vh;
-            background-image: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            background-image: linear-gradient(160deg, #d4efdf 0%, #d6eaf8 50%, #f0f4f8 100%);
+            padding: 15px 0;
         }
 
         .main-container {
-            width: 90%; max-width: 370px;
+            width: 92%;
+            max-width: 380px;
             background: #ffffff;
-            border-radius: 30px;
-            padding: 35px 20px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,98,255,0.1);
-        }
-
-        .img-box {
-            width: 125px; height: 125px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-blue);
+            border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+            border: 1px solid rgba(39,174,96,0.1);
         }
 
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
-
-        .title {
-            font-size: 26px; font-weight: 800; color: var(--primary-blue);
-            margin-bottom: 5px; line-height: 1.2;
+        /* Hero Banner */
+        .hero-banner {
+            width: 100%;
+            height: 170px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .subtitle {
-            font-size: 13px; color: #555; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1.5px;
-            margin-bottom: 25px;
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .info-list {
-            text-align: left; background: #f4f9ff;
-            padding: 18px; border-radius: 18px;
-            margin-bottom: 20px; display: inline-block; width: 92%;
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
+            padding: 25px 18px 10px;
         }
 
-        .info-item {
-            font-size: 13px; margin-bottom: 10px; color: #333;
-            display: flex; align-items: center; font-weight: 600;
-        }
-
-        .info-item b { color: var(--primary-blue); margin-right: 12px; font-size: 18px; }
-
-        .timer-section { margin-bottom: 25px; }
-
-        .timer-text {
-            font-size: 15px; font-weight: 800; color: #d9534f;
-            margin-bottom: 10px; display: block;
-        }
-
-        .telegram-highlight {
-            font-size: 13px; color: #111; font-weight: 700;
-            background: #fff3cd; 
-            padding: 12px 15px;
-            border-radius: 12px; 
-            border: 2px solid #ffc107;
-            display: block;
-            line-height: 1.4;
-        }
-
-        .important-tag {
-            color: var(--warning-red);
-            font-weight: 900;
-            text-decoration: underline;
-        }
-
-        .btn-join {
-            display: block;
-            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-            color: #fff; text-decoration: none;
-            padding: 20px; border-radius: 15px;
-            font-weight: 800; font-size: 17px;
+        .hero-overlay .badge {
+            display: inline-block;
+            background: var(--primary-green);
+            color: #fff;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
             text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(46,204,113,0.3);
-            transition: 0.4s;
-            animation: pulse-green 1.5s infinite;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .hero-overlay h1 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            padding: 15px 18px 0;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 8px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 1px;
+        }
+
+        .section-subtitle {
+            font-size: 11px;
+            color: #777;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .content-area {
+            padding: 0 18px 22px;
+        }
+
+        /* Spots Counter */
+        .spots-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #fff3f3;
+            border: 1px solid #ffcdd2;
+            border-radius: 8px;
+            padding: 7px 12px;
+            margin-bottom: 14px;
+        }
+
+        .spots-counter .dot {
+            width: 7px;
+            height: 7px;
+            background: #ff4444;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .spots-counter span {
+            font-size: 11px;
+            font-weight: 700;
+            color: #c0392b;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .info-card {
+            background: #f8fdf9;
+            border: 1px solid #d4efdf;
+            border-radius: 12px;
+            padding: 10px 8px;
+            text-align: center;
+        }
+
+        .info-card .card-icon {
+            font-size: 20px;
+            margin-bottom: 3px;
+            display: block;
+        }
+
+        .info-card .card-label {
+            font-size: 9px;
+            color: #888;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1px;
+        }
+
+        .info-card .card-value {
+            font-size: 13px;
+            color: var(--dark-text);
+            font-weight: 700;
+        }
+
+        /* Salary Box */
+        .salary-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 14px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .salary-box::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 100px;
+            height: 100px;
+            background: rgba(39,174,96,0.15);
+            border-radius: 50%;
+        }
+
+        .salary-box .salary-label {
+            font-size: 10px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2px;
+        }
+
+        .salary-box .salary-amount {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2ecc71;
+            margin-bottom: 2px;
+        }
+
+        .salary-box .salary-note {
+            font-size: 10px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        /* Timer Section */
+        .timer-section {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .timer-ring {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 8px;
+            position: relative;
+        }
+
+        .timer-ring svg {
+            transform: rotate(-90deg);
+            width: 56px;
+            height: 56px;
+        }
+
+        .timer-ring .bg-circle {
+            fill: none;
+            stroke: #eee;
+            stroke-width: 4;
+        }
+
+        .timer-ring .progress-circle {
+            fill: none;
+            stroke: var(--primary-green);
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-dasharray: 163.36;
+            stroke-dashoffset: 0;
+            transition: stroke-dashoffset 1s linear;
+        }
+
+        .timer-ring .timer-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--dark-text);
+        }
+
+        .timer-status {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            min-height: 16px;
+        }
+
+        .telegram-note {
+            font-size: 10.5px;
+            color: #555;
+            font-weight: 600;
+            background: #fff8e1;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #ffe082;
+            line-height: 1.4;
+            display: inline-block;
+        }
+
+        /* CTA Button */
+        .btn-apply {
+            display: block;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #2ecc71 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(39,174,96,0.35);
+            transition: 0.3s;
+            animation: pulse-green 2s infinite;
+            text-align: center;
+        }
+
+        .btn-apply .btn-sub {
+            display: block;
+            font-size: 10px;
+            font-weight: 500;
+            opacity: 0.85;
+            margin-top: 1px;
         }
 
         @keyframes pulse-green {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
-            70% { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(46, 204, 113, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39,174,96,0.5); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(39,174,96,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39,174,96,0); }
         }
 
         .disabled {
-            background: #bbb !important;
+            background: linear-gradient(135deg, #bbb 0%, #ccc 100%) !important;
             animation: none !important;
             cursor: not-allowed;
             box-shadow: none !important;
             opacity: 0.8;
         }
 
-        .footer { font-size: 11px; color: #999; margin-top: 18px; font-weight: 500; }
+        .btn-success {
+            background: linear-gradient(135deg, #0088cc 0%, #00aaff 100%) !important;
+            animation: pulse-blue 2s infinite;
+        }
+
+        @keyframes pulse-blue {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,136,204,0.5); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(0,136,204,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,136,204,0); }
+        }
+
+        /* Job Details */
+        .job-details {
+            background: linear-gradient(135deg, #f8fdf9 0%, #f0f9ff 100%);
+            border-radius: 14px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            border: 1px solid #d4efdf;
+        }
+
+        .job-details-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .job-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            font-size: 11.5px;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .job-detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-detail-item .check-icon {
+            width: 18px;
+            height: 18px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 10px;
+            flex-shrink: 0;
+        }
+
+        /* Gallery Preview */
+        .gallery-row {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .gallery-thumb {
+            flex: 1;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #eee;
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 12px 18px 18px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 9px;
+            color: var(--primary-green);
+            font-weight: 700;
+            background: #f8fdf9;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid #d4efdf;
+            margin-bottom: 4px;
+        }
+
+        .footer .footer-text {
+            font-size: 9px;
+            color: #aaa;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
 
     <div class="main-container">
-        <div class="img-box">
-            <img src="pic1.jpg" alt="Elite Profile">
-        </div>
 
-        <div class="title">Biggest Escort Meet-up</div>
-        <div class="subtitle">Hotel • Flat • Room Meeting</div>
-
-        <div class="info-list">
-            <div class="info-item"><b>✦</b> 100% Safe, Secure & Private</div>
-            <div class="info-item"><b>✦</b> High-Class Professional Staff</div>
-            <div class="info-item"><b>✦</b> Multiple Age Groups (18-32)</div>
-            <div class="info-item"><b>✦</b> Instant Meeting Guaranteed</div>
-        </div>
-
-        <div class="timer-section">
-            <span class="timer-text" id="status">
-                Verifying Connection... <span id="seconds">5</span>s
-            </span>
-            <div class="telegram-highlight">
-                ⚠ <span class="important-tag">IMPORTANT</span>: Agar aapke pass Telegram hai tabhi link ka wait kijiye!
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/168d73de8-573f-4dd7-956e-840f7475c9b3.png" alt="Spa Center">
+            <div class="hero-overlay">
+                <div class="badge">🟢 Hiring Now</div>
+                <h1>Body Massage Therapist<br>Job Opportunity</h1>
             </div>
         </div>
 
-        <a href="https://t.me/xkhushii?text=I%20want%20real%20meet%20in%20my%20city" id="joinBtn" class="btn-join disabled">
-            Please Wait...
-        </a>
+        <!-- Profile -->
+        <div class="profile-section">
+            <div class="profile-img">
+                <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/17bb0f5be-1685-4154-8565-d107b7355af4.png" alt="Massage Therapy Job">
+            </div>
+            <div class="section-title">Wellness & Spa Jobs</div>
+            <div class="section-subtitle">Premium Therapy Positions</div>
+        </div>
 
-        <div class="footer">Premium Verified Service | 24/7 Available</div>
+        <div class="content-area">
+
+            <!-- Spots Counter -->
+            <div class="spots-counter">
+                <div class="dot"></div>
+                <span>⚡ Sirf 7 Positions Baki Hain — Jaldi Apply Karein!</span>
+            </div>
+
+            <!-- Info Grid -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <span class="card-icon">💰</span>
+                    <div class="card-label">Salary</div>
+                    <div class="card-value">₹25K - ₹45K</div>
+                </div>
+                <div class="info-card">
+                    <span class="card-icon">🕐</span>
+                    <div class="card-label">Timing</div>
+                    <div class="card-value">Flexible</div>
+                </div>
+                <div class="info-card">
+                    <span class="card-icon">📍</span>
+                    <div class="card-label">Location</div>
+                    <div class="card-value">All Cities</div>
+                </div>
+                <div class="info-card">
+                    <span class="card-icon">🏠</span>
+                    <div class="card-label">Accommodation</div>
+                    <div class="card-value">Provided</div>
+                </div>
+            </div>
+
+            <!-- Salary Box -->
+            <div class="salary-box">
+                <div class="salary-label">Monthly Earning</div>
+                <div class="salary-amount">₹25,000 - ₹45,000</div>
+                <div class="salary-note">+ Tips + Incentives</div>
+            </div>
+
+            <!-- Timer Section -->
+            <div class="timer-section">
+                <div class="timer-ring">
+                    <svg viewBox="0 0 56 56">
+                        <circle class="bg-circle" cx="28" cy="28" r="26"></circle>
+                        <circle class="progress-circle" id="progressCircle" cx="28" cy="28" r="26"></circle>
+                    </svg>
+                    <div class="timer-text" id="timerDisplay">8</div>
+                </div>
+                <div class="timer-status" id="statusText">📋 Verifying Your Eligibility...</div>
+                <div class="telegram-note">
+                    <span class="tg-icon">📱</span> Agar aapke paas <b>Telegram</b> hai tabhi link ka wait karein!
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="https://t.me/xkhushii?text=I%20want%20real%20meet%20in%20my%20city" id="joinBtn" class="btn-apply disabled">
+                 Please Wait...
+                <span class="btn-sub">Verifying your connection</span>
+            </a>
+
+            <br>
+
+            <!-- Job Details -->
+            <div class="job-details">
+                <div class="job-details-title">📋 Job Requirements</div>
+                <div class="job-detail-item">
+                    <span class="check-icon">✓</span>
+                    <span>Age: 18 - 35 Years (Male/Female)</span>
+                </div>
+                <div class="job-detail-item">
+                    <span class="check-icon">✓</span>
+                    <span>Body Massage Therapy Experience Preferred</span>
+                </div>
+                <div class="job-detail-item">
+                    <span class="check-icon">✓</span>
+                    <span>Good Communication Skills Required</span>
+                </div>
+                <div class="job-detail-item">
+                    <span class="check-icon">✓</span>
+                    <span>Hotel / Spa / Wellness Center Based Work</span>
+                </div>
+                <div class="job-detail-item">
+                    <span class="check-icon">✓</span>
+                    <span>Training Provided for Freshers</span>
+                </div>
+                <div class="job-detail-item">
+                    <span class="check-icon">✓</span>
+                    <span>Food & Accommodation Available</span>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="gallery-row">
+                <div class="gallery-thumb">
+                    <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/145ddef33-0244-4710-b4ca-1eb5c49abb63.png" alt="Therapist at work">
+                </div>
+                <div class="gallery-thumb">
+                    <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/168d73de8-573f-4dd7-956e-840f7475c9b3.png" alt="Spa room">
+                </div>
+                <div class="gallery-thumb">
+                    <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/17bb0f5be-1685-4154-8565-d107b7355af4.png" alt="Massage therapy">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="verified-badge">✅ Verified Job Portal | 24/7 Support</div>
+            <div class="footer-text">© 2026 Wellness & Spa Jobs — All Rights Reserved</div>
+        </div>
+
     </div>
 
     <script>
-        let timeLeft = 5;
+        let timeLeft = 8;
+        const totalTime = 8;
         const btn = document.getElementById('joinBtn');
-        const secondsText = document.getElementById('seconds');
-        const statusText = document.getElementById('status');
-        let leadFired = false; 
+        const timerDisplay = document.getElementById('timerDisplay');
+        const statusText = document.getElementById('statusText');
+        const progressCircle = document.getElementById('progressCircle');
+        const circumference = 2 * Math.PI * 26;
+        let leadFired = false;
+
+        progressCircle.style.strokeDasharray = circumference;
+        progressCircle.style.strokeDashoffset = '0';
 
         const timer = setInterval(() => {
             timeLeft--;
-            if(secondsText) secondsText.innerText = timeLeft;
+            if (timerDisplay) timerDisplay.innerText = timeLeft;
+
+            const progress = ((totalTime - timeLeft) / totalTime) * circumference;
+            progressCircle.style.strokeDashoffset = progress;
+
+            if (timeLeft === 6) {
+                statusText.innerText = ' Checking Job Requirements...';
+                statusText.style.color = '#f39c12';
+            } else if (timeLeft === 4) {
+                statusText.innerText = '🔍 Matching Your Profile...';
+                statusText.style.color = '#e67e22';
+            } else if (timeLeft === 2) {
+                statusText.innerText = '✅ Almost Ready...';
+                statusText.style.color = '#27ae60';
+            }
 
             if (timeLeft <= 0) {
                 clearInterval(timer);
-                statusText.innerHTML = "Access Verified! Link is Live.";
-                statusText.style.color = "#27ae60";
+                statusText.innerHTML = '✅ Verification Complete! Apply Now';
+                statusText.style.color = '#27ae60';
                 btn.classList.remove('disabled');
-                btn.innerText = "Join Channel Now";
+                btn.innerHTML = ' Join Telegram — Apply Now<span class="btn-sub">Direct Job Link — Limited Spots</span>';
+                btn.classList.add('btn-success');
             }
         }, 1000);
 
         btn.addEventListener('click', function(e) {
-            if(timeLeft > 0) {
+            if (timeLeft > 0) {
                 e.preventDefault();
             } else {
-                if(!leadFired) {
-                    fbq('track', 'Lead'); 
-                    leadFired = true; 
-                    console.log("Lead fired on Pixel ID: 1341696331130205");
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+                if (!leadFired) {
+                    leadFired = true;
+                    console.log('Job application click tra
