@@ -1,646 +1,399 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Massage Therapist Jobs | Premium Hiring</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wellness Connect | Massage Professionals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-    <style>
-        :root {
-            --primary-green: #27ae60;
-            --primary-blue: #0062ff;
-            --accent-gold: #f39c12;
-            --bg-color: #f0f4f8;
-            --dark-text: #1a1a2e;
-        }
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1662010748275569');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1662010748275569&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    :root {
+      --sage:  #2d6a4f;
+      --mint:  #74c69d;
+      --amber: #c8873a;
+      --dark:  #0d1f15;
+    }
 
-        body {
-            background: var(--bg-color);
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            background-image: linear-gradient(160deg, #d4efdf 0%, #d6eaf8 50%, #f0f4f8 100%);
-            padding: 15px 0;
-        }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .main-container {
-            width: 92%;
-            max-width: 380px;
-            background: #ffffff;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
-            border: 1px solid rgba(39,174,96,0.1);
-        }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--dark);
+    }
 
-        /* Hero Banner */
-        .hero-banner {
-            width: 100%;
-            height: 170px;
-            position: relative;
-            overflow: hidden;
-        }
+    .page {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .hero-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    /* ── HEADER ── */
+    .topbar {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 10;
+    }
 
-        .hero-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.75));
-            padding: 25px 18px 10px;
-        }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .logo span { color: var(--mint); }
 
-        .hero-overlay .badge {
-            display: inline-block;
-            background: var(--primary-green);
-            color: #fff;
-            font-size: 9px;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(116,198,157,0.1);
+      border: 1px solid rgba(116,198,157,0.25);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--mint);
+    }
 
-        .hero-overlay h1 {
-            color: #fff;
-            font-size: 18px;
-            font-weight: 800;
-            line-height: 1.25;
-        }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--mint);
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-        /* Profile Section */
-        .profile-section {
-            text-align: center;
-            padding: 15px 18px 0;
-            margin-top: -25px;
-            position: relative;
-            z-index: 2;
-        }
+    /* ── MAIN ── */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+    }
 
-        .profile-img {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 8px;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
+    /* ── PANEL ── */
+    .panel {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
 
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .panel--green {
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
 
-        .section-title {
-            font-size: 16px;
-            font-weight: 800;
-            color: var(--dark-text);
-            margin-bottom: 1px;
-        }
+    .panel-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      transition: transform 0.6s ease;
+    }
 
-        .section-subtitle {
-            font-size: 11px;
-            color: #777;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 14px;
-        }
+    .panel:hover .panel-bg,
+    .panel:active .panel-bg {
+      transform: scale(1.05);
+    }
 
-        .content-area {
-            padding: 0 18px 22px;
-        }
+    .panel-overlay {
+      position: absolute;
+      inset: 0;
+    }
 
-        /* Spots Counter */
-        .spots-counter {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            background: #fff3f3;
-            border: 1px solid #ffcdd2;
-            border-radius: 8px;
-            padding: 7px 12px;
-            margin-bottom: 14px;
-        }
+    .panel--green .panel-overlay {
+      background: linear-gradient(0deg,
+        rgba(8,25,15,0.97) 0%,
+        rgba(8,25,15,0.6) 40%,
+        rgba(8,25,15,0.1) 100%);
+    }
 
-        .spots-counter .dot {
-            width: 7px;
-            height: 7px;
-            background: #ff4444;
-            border-radius: 50%;
-            animation: blink 1s infinite;
-        }
+    .panel--amber .panel-overlay {
+      background: linear-gradient(0deg,
+        rgba(18,9,2,0.97) 0%,
+        rgba(18,9,2,0.6) 40%,
+        rgba(18,9,2,0.1) 100%);
+    }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
+    /* ── PANEL CONTENT — pushed up from bottom ── */
+    .panel-content {
+      position: relative;
+      z-index: 3;
+      padding: 20px 16px 28px;
+      margin-bottom: 6px;
+    }
 
-        .spots-counter span {
-            font-size: 11px;
-            font-weight: 700;
-            color: #c0392b;
-        }
+    .panel-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
 
-        /* Info Grid */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            margin-bottom: 14px;
-        }
+    .badge-green {
+      background: rgba(45,106,79,0.9);
+      color: #d4f5e2;
+      border: 1px solid rgba(116,198,157,0.4);
+    }
 
-        .info-card {
-            background: #f8fdf9;
-            border: 1px solid #d4efdf;
-            border-radius: 12px;
-            padding: 10px 8px;
-            text-align: center;
-        }
+    .badge-amber {
+      background: rgba(200,135,58,0.9);
+      color: #fdecd4;
+      border: 1px solid rgba(240,185,106,0.4);
+    }
 
-        .info-card .card-icon {
-            font-size: 20px;
-            margin-bottom: 3px;
-            display: block;
-        }
+    .panel-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 4vw, 1.7rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
 
-        .info-card .card-label {
-            font-size: 9px;
-            color: #888;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1px;
-        }
+    .panel-content p {
+      font-size: clamp(0.62rem, 2vw, 0.75rem);
+      color: rgba(255,255,255,0.5);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
 
-        .info-card .card-value {
-            font-size: 13px;
-            color: var(--dark-text);
-            font-weight: 700;
-        }
+    .features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 18px;
+    }
 
-        /* Salary Box */
-        .salary-box {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 14px;
-            padding: 14px;
-            margin-bottom: 14px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+    .features li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: clamp(0.6rem, 1.8vw, 0.72rem);
+      color: rgba(255,255,255,0.7);
+    }
 
-        .salary-box::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -20%;
-            width: 100px;
-            height: 100px;
-            background: rgba(39,174,96,0.15);
-            border-radius: 50%;
-        }
+    .check {
+      width: 15px; height: 15px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.52rem;
+      flex-shrink: 0;
+    }
 
-        .salary-box .salary-label {
-            font-size: 10px;
-            color: rgba(255,255,255,0.6);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 2px;
-        }
+    .check-green { background: rgba(45,106,79,0.7); color: var(--mint); }
+    .check-amber { background: rgba(200,135,58,0.6); color: #f0b96a; }
 
-        .salary-box .salary-amount {
-            font-size: 24px;
-            font-weight: 800;
-            color: #2ecc71;
-            margin-bottom: 2px;
-        }
+    /* ── CTA BUTTON WITH WHATSAPP ICON ── */
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.68rem, 2vw, 0.82rem);
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
 
-        .salary-box .salary-note {
-            font-size: 10px;
-            color: rgba(255,255,255,0.5);
-            font-weight: 500;
-        }
+    .cta-btn:active { transform: scale(0.96); opacity: 0.85; }
+    .cta-btn:hover  { opacity: 0.9; }
 
-        /* Timer Section */
-        .timer-section {
-            text-align: center;
-            margin-bottom: 14px;
-        }
+    .cta-green {
+      background: linear-gradient(135deg, #25d366, #128c4a);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.4);
+    }
 
-        .timer-ring {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 8px;
-            position: relative;
-        }
+    .cta-amber {
+      background: linear-gradient(135deg, #25d366, #128c4a);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.4);
+    }
 
-        .timer-ring svg {
-            transform: rotate(-90deg);
-            width: 56px;
-            height: 56px;
-        }
+    /* WhatsApp SVG icon */
+    .wa-icon {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
 
-        .timer-ring .bg-circle {
-            fill: none;
-            stroke: #eee;
-            stroke-width: 4;
-        }
+    /* ── FOOTER ── */
+    .footer {
+      flex-shrink: 0;
+      text-align: center;
+      padding: 8px 20px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.25);
+    }
 
-        .timer-ring .progress-circle {
-            fill: none;
-            stroke: var(--primary-green);
-            stroke-width: 4;
-            stroke-linecap: round;
-            stroke-dasharray: 163.36;
-            stroke-dashoffset: 0;
-            transition: stroke-dashoffset 1s linear;
-        }
-
-        .timer-ring .timer-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 15px;
-            font-weight: 800;
-            color: var(--dark-text);
-        }
-
-        .timer-status {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--accent-gold);
-            margin-bottom: 8px;
-            min-height: 16px;
-        }
-
-        .telegram-note {
-            font-size: 10.5px;
-            color: #555;
-            font-weight: 600;
-            background: #fff8e1;
-            padding: 8px 12px;
-            border-radius: 8px;
-            border: 1px solid #ffe082;
-            line-height: 1.4;
-            display: inline-block;
-        }
-
-        /* CTA Button */
-        .btn-apply {
-            display: block;
-            background: linear-gradient(135deg, var(--primary-green) 0%, #2ecc71 100%);
-            color: #fff;
-            text-decoration: none;
-            padding: 16px;
-            border-radius: 14px;
-            font-weight: 800;
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 25px rgba(39,174,96,0.35);
-            transition: 0.3s;
-            animation: pulse-green 2s infinite;
-            text-align: center;
-        }
-
-        .btn-apply .btn-sub {
-            display: block;
-            font-size: 10px;
-            font-weight: 500;
-            opacity: 0.85;
-            margin-top: 1px;
-        }
-
-        @keyframes pulse-green {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39,174,96,0.5); }
-            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(39,174,96,0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39,174,96,0); }
-        }
-
-        .disabled {
-            background: linear-gradient(135deg, #bbb 0%, #ccc 100%) !important;
-            animation: none !important;
-            cursor: not-allowed;
-            box-shadow: none !important;
-            opacity: 0.8;
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #0088cc 0%, #00aaff 100%) !important;
-            animation: pulse-blue 2s infinite;
-        }
-
-        @keyframes pulse-blue {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,136,204,0.5); }
-            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(0,136,204,0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,136,204,0); }
-        }
-
-        /* Job Details */
-        .job-details {
-            background: linear-gradient(135deg, #f8fdf9 0%, #f0f9ff 100%);
-            border-radius: 14px;
-            padding: 12px 14px;
-            margin-bottom: 14px;
-            border: 1px solid #d4efdf;
-        }
-
-        .job-details-title {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--primary-green);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .job-detail-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 5px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.04);
-            font-size: 11.5px;
-            color: #444;
-            font-weight: 500;
-        }
-
-        .job-detail-item:last-child {
-            border-bottom: none;
-        }
-
-        .job-detail-item .check-icon {
-            width: 18px;
-            height: 18px;
-            background: var(--primary-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 10px;
-            flex-shrink: 0;
-        }
-
-        /* Gallery Preview */
-        .gallery-row {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 14px;
-        }
-
-        .gallery-thumb {
-            flex: 1;
-            height: 60px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #eee;
-        }
-
-        .gallery-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 12px 18px 18px;
-            border-top: 1px solid #eee;
-        }
-
-        .footer .verified-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 9px;
-            color: var(--primary-green);
-            font-weight: 700;
-            background: #f8fdf9;
-            padding: 4px 10px;
-            border-radius: 20px;
-            border: 1px solid #d4efdf;
-            margin-bottom: 4px;
-        }
-
-        .footer .footer-text {
-            font-size: 9px;
-            color: #aaa;
-            font-weight: 500;
-        }
-    </style>
+    .footer a { color: var(--mint); text-decoration: none; }
+  </style>
 </head>
 <body>
 
-    <div class="main-container">
+<div class="page">
 
-        <!-- Hero Banner -->
-        <div class="hero-banner">
-            <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/168d73de8-573f-4dd7-956e-840f7475c9b3.png" alt="Spa Center">
-            <div class="hero-overlay">
-                <div class="badge">🟢 Hiring Now</div>
-                <h1>Body Massage Therapist<br>Job Opportunity</h1>
-            </div>
-        </div>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="logo">Wellness<span>Connect</span></div>
+    <div class="trust-pill"><span class="dot"></span>10000+ satisfied customer</div>
+  </header>
 
-        <!-- Profile -->
-        <div class="profile-section">
-            <div class="profile-img">
-                <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/17bb0f5be-1685-4154-8565-d107b7355af4.png" alt="Massage Therapy Job">
-            </div>
-            <div class="section-title">Wellness & Spa Jobs</div>
-            <div class="section-subtitle">Premium Therapy Positions</div>
-        </div>
+  <!-- SIDE BY SIDE PANELS -->
+  <main class="main">
 
-        <div class="content-area">
-
-            <!-- Spots Counter -->
-            <div class="spots-counter">
-                <div class="dot"></div>
-                <span>⚡ Sirf 7 Positions Baki Hain — Jaldi Apply Karein!</span>
-            </div>
-
-            <!-- Info Grid -->
-            <div class="info-grid">
-                <div class="info-card">
-                    <span class="card-icon">💰</span>
-                    <div class="card-label">Salary</div>
-                    <div class="card-value">₹25K - ₹45K</div>
-                </div>
-                <div class="info-card">
-                    <span class="card-icon">🕐</span>
-                    <div class="card-label">Timing</div>
-                    <div class="card-value">Flexible</div>
-                </div>
-                <div class="info-card">
-                    <span class="card-icon">📍</span>
-                    <div class="card-label">Location</div>
-                    <div class="card-value">All Cities</div>
-                </div>
-                <div class="info-card">
-                    <span class="card-icon">🏠</span>
-                    <div class="card-label">Accommodation</div>
-                    <div class="card-value">Provided</div>
-                </div>
-            </div>
-
-            <!-- Salary Box -->
-            <div class="salary-box">
-                <div class="salary-label">Monthly Earning</div>
-                <div class="salary-amount">₹25,000 - ₹45,000</div>
-                <div class="salary-note">+ Tips + Incentives</div>
-            </div>
-
-            <!-- Timer Section -->
-            <div class="timer-section">
-                <div class="timer-ring">
-                    <svg viewBox="0 0 56 56">
-                        <circle class="bg-circle" cx="28" cy="28" r="26"></circle>
-                        <circle class="progress-circle" id="progressCircle" cx="28" cy="28" r="26"></circle>
-                    </svg>
-                    <div class="timer-text" id="timerDisplay">8</div>
-                </div>
-                <div class="timer-status" id="statusText">📋 Verifying Your Eligibility...</div>
-                <div class="telegram-note">
-                    <span class="tg-icon">📱</span> Agar aapke paas <b>Telegram</b> hai tabhi link ka wait karein!
-                </div>
-            </div>
-
-            <!-- CTA Button -->
-            <a href="https://t.me/xkhushii?text=I%20want%20real%20meet%20in%20my%20city" id="joinBtn" class="btn-apply disabled">
-                 Please Wait...
-                <span class="btn-sub">Verifying your connection</span>
-            </a>
-
-            <br>
-
-            <!-- Job Details -->
-            <div class="job-details">
-                <div class="job-details-title">📋 Job Requirements</div>
-                <div class="job-detail-item">
-                    <span class="check-icon">✓</span>
-                    <span>Age: 18 - 35 Years (Male/Female)</span>
-                </div>
-                <div class="job-detail-item">
-                    <span class="check-icon">✓</span>
-                    <span>Body Massage Therapy Experience Preferred</span>
-                </div>
-                <div class="job-detail-item">
-                    <span class="check-icon">✓</span>
-                    <span>Good Communication Skills Required</span>
-                </div>
-                <div class="job-detail-item">
-                    <span class="check-icon">✓</span>
-                    <span>Hotel / Spa / Wellness Center Based Work</span>
-                </div>
-                <div class="job-detail-item">
-                    <span class="check-icon">✓</span>
-                    <span>Training Provided for Freshers</span>
-                </div>
-                <div class="job-detail-item">
-                    <span class="check-icon">✓</span>
-                    <span>Food & Accommodation Available</span>
-                </div>
-            </div>
-
-            <!-- Gallery -->
-            <div class="gallery-row">
-                <div class="gallery-thumb">
-                    <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/145ddef33-0244-4710-b4ca-1eb5c49abb63.png" alt="Therapist at work">
-                </div>
-                <div class="gallery-thumb">
-                    <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/168d73de8-573f-4dd7-956e-840f7475c9b3.png" alt="Spa room">
-                </div>
-                <div class="gallery-thumb">
-                    <img src="https://image.qwenlm.ai/public_source/00523225-c88f-4f8a-8670-35844aabe78f/17bb0f5be-1685-4154-8565-d107b7355af4.png" alt="Massage therapy">
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <div class="verified-badge">✅ Verified Job Portal | 24/7 Support</div>
-            <div class="footer-text">© 2026 Wellness & Spa Jobs — All Rights Reserved</div>
-        </div>
-
+    <!-- LEFT: Real Meet Service -->
+    <div class="panel panel--green" id="panel1">
+      <div class="panel-bg" style="background-image:url('pic1.jpg');"></div>
+      <div class="panel-overlay"></div>
+      <div class="panel-content">
+        <span class="panel-badge badge-green">Home / Hotel</span>
+        <h2>Real Meet<br>Service</h2>
+        <p>we provide Real meet sex service and body massage to relax soul and satisfied body i have multiple type of female staff of all ages group.</p>
+        <ul class="features">
+          <li><span class="check check-green">✓</span> Body Massage with sex</li>
+          <li><span class="check check-green">✓</span> Handjob, Blowjob , Sucking</li>
+          <li><span class="check check-green">✓</span> Age between 20 -35s</li>
+          <li><span class="check check-green">✓</span> we provide Indian desi girl and Russian</li>
+        </ul>
+        <button class="cta-btn cta-green" id="btn1">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          appointment
+        </button>
+      </div>
     </div>
 
-    <script>
-        let timeLeft = 5;
-        const totalTime = 5;
-        const btn = document.getElementById('joinBtn');
-        const timerDisplay = document.getElementById('timerDisplay');
-        const statusText = document.getElementById('statusText');
-        const progressCircle = document.getElementById('progressCircle');
-        const circumference = 2 * Math.PI * 26;
-        let leadFired = false;
+    <!-- RIGHT: Open Private Agency -->
+    <div class="panel panel--amber" id="panel2">
+      <div class="panel-bg" style="background-image:url('pic2.jpg');"></div>
+      <div class="panel-overlay"></div>
+      <div class="panel-content">
+        <span class="panel-badge badge-amber">Female Clients</span>
+        <h2>Open Private<br>Agency</h2>
+        <p>Launch your own agency with full support. Dedicated client base & guidance.</p>
+        <ul class="features">
+          <li><span class="check check-amber">✓</span> Business guidance</li>
+          <li><span class="check check-amber">✓</span> Female client base</li>
+          <li><span class="check check-amber">✓</span> Brand & marketing</li>
+          <li><span class="check check-amber">✓</span> Recurring income</li>
+        </ul>
+        <button class="cta-btn cta-amber" id="btn2">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Start Agency
+        </button>
+      </div>
+    </div>
 
-        progressCircle.style.strokeDasharray = circumference;
-        progressCircle.style.strokeDashoffset = '0';
+  </main>
 
-        const timer = setInterval(() => {
-            timeLeft--;
-            if (timerDisplay) timerDisplay.innerText = timeLeft;
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2025 Wellness Professional Network &nbsp;·&nbsp; <a href="tel:+919354185036">Contact Us</a>
+  </footer>
 
-            const progress = ((totalTime - timeLeft) / totalTime) * circumference;
-            progressCircle.style.strokeDashoffset = progress;
+</div>
 
-            if (timeLeft === 6) {
-                statusText.innerText = ' Checking Job Requirements...';
-                statusText.style.color = '#f39c12';
-            } else if (timeLeft === 4) {
-                statusText.innerText = '🔍 Matching Your Profile...';
-                statusText.style.color = '#e67e22';
-            } else if (timeLeft === 2) {
-                statusText.innerText = '✅ Almost Ready...';
-                statusText.style.color = '#27ae60';
-            }
+<script>
+  const WA = "919354185036";
 
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                statusText.innerHTML = '✅ Verification Complete! Apply Now';
-                statusText.style.color = '#27ae60';
-                btn.classList.remove('disabled');
-                btn.innerHTML = ' Join Telegram — Apply Now<span class="btn-sub">Direct Job Link — Limited Spots</span>';
-                btn.classList.add('btn-success');
-            }
-        }, 1000);
+  async function getLocation() {
+    try {
+      const r = await fetch('https://ipapi.co/json/');
+      const d = await r.json();
+      return `${d.city || 'Unknown'}, ${d.region || ''}, ${d.country_name || 'India'}`;
+    } catch { return 'India'; }
+  }
 
-        btn.addEventListener('click', function(e) {
-            if (timeLeft > 0) {
-                e.preventDefault();
-            } else {
-                if (!leadFired) {
-                    leadFired = true;
-                    console.log('Job application click tracked');
-                }
-            }
-        });
-    </script>
+  async function send(type) {
+    const btn = document.getElementById(type === 'green' ? 'btn1' : 'btn2');
+    btn.style.opacity = '0.6';
+    btn.style.pointerEvents = 'none';
+
+    // ✅ TRACK LEAD ON FACEBOOK PIXEL
+    fbq('track', 'Lead', {
+      content_name: type === 'green' ? 'Real Meet Service' : 'Open Private Agency',
+      content_category: 'Appointment Confirmation',
+      currency: 'INR',
+      value: 0
+    });
+
+    const loc = await getLocation();
+    const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
+    // WhatsApp message
+    const msg = type === 'green'
+      ? `*REAL MEET SERVICE*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Home/Hotel Massage with Staff`
+      : `*PRIVATE AGENCY*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Open Private Massage Agency\n👩 Female Clients Only`;
+
+    // Open WhatsApp
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+    
+    // Reset button after 2 seconds
+    setTimeout(() => {
+      btn.style.opacity = '';
+      btn.style.pointerEvents = '';
+    }, 2000);
+  }
+
+  // Button click listeners
+  document.getElementById('btn1').addEventListener('click', e => { 
+    e.stopPropagation(); 
+    send('green'); 
+  });
+  
+  document.getElementById('btn2').addEventListener('click', e => { 
+    e.stopPropagation(); 
+    send('amber'); 
+  });
+</script>
 
 </body>
 </html>
-
