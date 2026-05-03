@@ -24,29 +24,19 @@
     // Pixel 2
     fbq('init', '1461547928769031');
 
-    // PageView for both pixels
     fbq('track', 'PageView');
   </script>
   <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1662010748275569&ev=PageView&noscript=1"/>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1461547928769031&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1662010748275569&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1461547928769031&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <style>
     :root {
       --mint: #74c69d;
       --dark: #0d1f15;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
       width: 100%;
       height: 100%;
@@ -54,14 +44,12 @@
       font-family: 'DM Sans', sans-serif;
       background: var(--dark);
     }
-
     .page {
       width: 100vw;
       height: 100vh;
       display: flex;
       flex-direction: column;
     }
-
     .topbar {
       flex-shrink: 0;
       display: flex;
@@ -70,9 +58,7 @@
       padding: 14px 20px;
       background: rgba(255,255,255,0.03);
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      z-index: 10;
     }
-
     .logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.25rem;
@@ -80,7 +66,6 @@
       color: #fff;
     }
     .logo span { color: var(--mint); }
-
     .trust-pill {
       display: flex;
       align-items: center;
@@ -93,7 +78,6 @@
       font-weight: 500;
       color: var(--mint);
     }
-
     .dot {
       width: 6px; height: 6px;
       border-radius: 50%;
@@ -101,14 +85,12 @@
       animation: blink 2s infinite;
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
     .main {
       flex: 1;
       display: flex;
       flex-direction: row;
       overflow: hidden;
     }
-
     .panel {
       flex: 1;
       position: relative;
@@ -117,11 +99,9 @@
       flex-direction: column;
       justify-content: flex-end;
     }
-
     .panel--green {
       border-right: 1px solid rgba(255,255,255,0.12);
     }
-
     .panel-bg {
       position: absolute;
       inset: 0;
@@ -129,38 +109,30 @@
       background-position: center center;
       transition: transform 0.6s ease;
     }
-
     .panel--green .panel-bg {
-      background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=900&fit=crop');
+      background-image: url('pic1.jpg');
     }
-
     .panel--amber .panel-bg {
-      background-image: url('https://images.unsplash.com/photo-1583845112203-293299d4fcb1?w=600&h=900&fit=crop');
+      background-image: url('pic2.jpg');
     }
-
     .panel:hover .panel-bg {
       transform: scale(1.05);
     }
-
     .panel-overlay {
       position: absolute;
       inset: 0;
     }
-
     .panel--green .panel-overlay {
       background: linear-gradient(0deg, rgba(8,25,15,0.97) 0%, rgba(8,25,15,0.6) 40%, rgba(8,25,15,0.1) 100%);
     }
-
     .panel--amber .panel-overlay {
       background: linear-gradient(0deg, rgba(18,9,2,0.97) 0%, rgba(18,9,2,0.6) 40%, rgba(18,9,2,0.1) 100%);
     }
-
     .panel-content {
       position: relative;
       z-index: 3;
       padding: 20px 16px 28px;
     }
-
     .panel-badge {
       display: inline-block;
       padding: 3px 10px;
@@ -171,19 +143,16 @@
       text-transform: uppercase;
       margin-bottom: 10px;
     }
-
     .badge-green {
       background: rgba(45,106,79,0.9);
       color: #d4f5e2;
       border: 1px solid rgba(116,198,157,0.4);
     }
-
     .badge-amber {
       background: rgba(200,135,58,0.9);
       color: #fdecd4;
       border: 1px solid rgba(240,185,106,0.4);
     }
-
     .panel-content h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.15rem, 4vw, 1.7rem);
@@ -192,14 +161,12 @@
       line-height: 1.1;
       margin-bottom: 8px;
     }
-
     .panel-content p {
       font-size: clamp(0.62rem, 2vw, 0.75rem);
       color: rgba(255,255,255,0.5);
       line-height: 1.55;
       margin-bottom: 12px;
     }
-
     .features {
       list-style: none;
       display: flex;
@@ -207,7 +174,6 @@
       gap: 5px;
       margin-bottom: 18px;
     }
-
     .features li {
       display: flex;
       align-items: center;
@@ -215,7 +181,6 @@
       font-size: clamp(0.6rem, 1.8vw, 0.72rem);
       color: rgba(255,255,255,0.7);
     }
-
     .check {
       width: 15px; height: 15px;
       border-radius: 50%;
@@ -225,10 +190,8 @@
       font-size: 0.52rem;
       flex-shrink: 0;
     }
-
     .check-green { background: rgba(45,106,79,0.7); color: var(--mint); }
     .check-amber { background: rgba(200,135,58,0.6); color: #f0b96a; }
-
     .cta-btn {
       display: flex;
       align-items: center;
@@ -244,20 +207,16 @@
       cursor: pointer;
       transition: opacity 0.2s, transform 0.15s;
     }
-
     .cta-btn:active { transform: scale(0.96); }
-
     .cta-green, .cta-amber {
       background: linear-gradient(135deg, #25d366, #128c4a);
       color: #fff;
       box-shadow: 0 4px 18px rgba(37,211,102,0.4);
     }
-
     .wa-icon {
       width: 17px;
       height: 17px;
     }
-
     .footer {
       flex-shrink: 0;
       text-align: center;
@@ -266,7 +225,6 @@
       font-size: 0.6rem;
       color: rgba(255,255,255,0.25);
     }
-
     .footer a { color: var(--mint); text-decoration: none; }
   </style>
 </head>
@@ -293,9 +251,7 @@
           <li><span class="check check-green">✓</span> Indian & Russian</li>
         </ul>
         <button class="cta-btn cta-green" id="btn1">
-          <svg class="wa-icon" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Appointment
         </button>
       </div>
@@ -315,9 +271,7 @@
           <li><span class="check check-amber">✓</span> Recurring income</li>
         </ul>
         <button class="cta-btn cta-amber" id="btn2">
-          <svg class="wa-icon" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Start Agency
         </button>
       </div>
@@ -346,8 +300,7 @@
     btn.style.pointerEvents = 'none';
     btn.disabled = true;
 
-    // ✅ TRACK LEAD ON BOTH PIXELS
-    // This sends Lead event to both pixels simultaneously
+    // Track Lead on both pixels
     fbq('track', 'Lead', {
       content_name: type === 'green' ? 'Real Meet Service' : 'Open Private Agency',
       content_category: 'Appointment Confirmation',
@@ -361,7 +314,6 @@
       ? `*REAL MEET SERVICE*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Home/Hotel Massage`
       : `*PRIVATE AGENCY*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Open Private Massage Agency\n👩 Female Clients Only`;
 
-    // Fix for Facebook in-app browser
     setTimeout(() => {
       window.location.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
     }, 200);
