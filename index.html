@@ -286,43 +286,42 @@
 <script>
   const WA = "919354185036";
 
-  async function getLocation() {
+  // Pre-load location in background (so it's ready when clicked)
+  let cachedLocation = "India";
+  (async function() {
     try {
       const r = await fetch('https://ipapi.co/json/');
       const d = await r.json();
-      return `${d.city || 'Unknown'}, ${d.country_name || 'India'}`;
-    } catch { return 'India'; }
-  }
+      cachedLocation = `${d.city || 'Unknown'}, ${d.country_name || 'India'}`;
+    } catch(e) {}
+  })();
 
-  async function send(type) {
+  function send(type) {
     const btn = document.getElementById(type === 'green' ? 'btn1' : 'btn2');
     btn.style.opacity = '0.6';
     btn.style.pointerEvents = 'none';
-    btn.disabled = true;
 
-    // Track Lead on both pixels
+    // Track Lead on both pixels - INSTANT (no delay)
     fbq('track', 'Lead', {
       content_name: type === 'green' ? 'Real Meet Service' : 'Open Private Agency',
       content_category: 'Appointment Confirmation',
       currency: 'INR'
     });
 
-    const loc = await getLocation();
     const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-
+    
     const msg = type === 'green'
-      ? `*REAL MEET SERVICE*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Home/Hotel Massage`
-      : `*PRIVATE AGENCY*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Open Private Massage Agency\n👩 Female Clients Only`;
+      ? `*REAL MEET SERVICE*%0A%0A📍 Location: ${cachedLocation}%0A🕐 Time: ${time}%0A%0A📌 Service: Home/Hotel Massage`
+      : `*PRIVATE AGENCY*%0A%0A📍 Location: ${cachedLocation}%0A🕐 Time: ${time}%0A%0A📌 Service: Open Private Massage Agency%0A👩 Female Clients Only`;
 
-    setTimeout(() => {
-      window.location.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
-    }, 200);
-
+    // INSTANT WhatsApp open - NO DELAY
+    window.location.href = `https://wa.me/${WA}?text=${msg}`;
+    
+    // Reset button after 1 second
     setTimeout(() => {
       btn.style.opacity = '';
       btn.style.pointerEvents = '';
-      btn.disabled = false;
-    }, 3000);
+    }, 1000);
   }
 
   document.getElementById('btn1').addEventListener('click', e => {
