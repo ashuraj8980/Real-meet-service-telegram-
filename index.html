@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Wellness Connect | Massage Professionals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code - Multiple Pixels -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,24 +17,35 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+
+    // Pixel 1
     fbq('init', '1662010748275569');
+    
+    // Pixel 2
+    fbq('init', '1461547928769031');
+
+    // PageView for both pixels
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1662010748275569&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1461547928769031&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
     :root {
-      --sage:  #2d6a4f;
-      --mint:  #74c69d;
-      --amber: #c8873a;
-      --dark:  #0d1f15;
+      --mint: #74c69d;
+      --dark: #0d1f15;
     }
 
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     html, body {
       width: 100%;
@@ -51,7 +62,6 @@
       flex-direction: column;
     }
 
-    /* ── HEADER ── */
     .topbar {
       flex-shrink: 0;
       display: flex;
@@ -92,7 +102,6 @@
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-    /* ── MAIN ── */
     .main {
       flex: 1;
       display: flex;
@@ -100,12 +109,10 @@
       overflow: hidden;
     }
 
-    /* ── PANEL ── */
     .panel {
       flex: 1;
       position: relative;
       overflow: hidden;
-      cursor: pointer;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -123,8 +130,15 @@
       transition: transform 0.6s ease;
     }
 
-    .panel:hover .panel-bg,
-    .panel:active .panel-bg {
+    .panel--green .panel-bg {
+      background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=900&fit=crop');
+    }
+
+    .panel--amber .panel-bg {
+      background-image: url('https://images.unsplash.com/photo-1583845112203-293299d4fcb1?w=600&h=900&fit=crop');
+    }
+
+    .panel:hover .panel-bg {
       transform: scale(1.05);
     }
 
@@ -134,25 +148,17 @@
     }
 
     .panel--green .panel-overlay {
-      background: linear-gradient(0deg,
-        rgba(8,25,15,0.97) 0%,
-        rgba(8,25,15,0.6) 40%,
-        rgba(8,25,15,0.1) 100%);
+      background: linear-gradient(0deg, rgba(8,25,15,0.97) 0%, rgba(8,25,15,0.6) 40%, rgba(8,25,15,0.1) 100%);
     }
 
     .panel--amber .panel-overlay {
-      background: linear-gradient(0deg,
-        rgba(18,9,2,0.97) 0%,
-        rgba(18,9,2,0.6) 40%,
-        rgba(18,9,2,0.1) 100%);
+      background: linear-gradient(0deg, rgba(18,9,2,0.97) 0%, rgba(18,9,2,0.6) 40%, rgba(18,9,2,0.1) 100%);
     }
 
-    /* ── PANEL CONTENT — pushed up from bottom ── */
     .panel-content {
       position: relative;
       z-index: 3;
       padding: 20px 16px 28px;
-      margin-bottom: 6px;
     }
 
     .panel-badge {
@@ -213,7 +219,9 @@
     .check {
       width: 15px; height: 15px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 0.52rem;
       flex-shrink: 0;
     }
@@ -221,7 +229,6 @@
     .check-green { background: rgba(45,106,79,0.7); color: var(--mint); }
     .check-amber { background: rgba(200,135,58,0.6); color: #f0b96a; }
 
-    /* ── CTA BUTTON WITH WHATSAPP ICON ── */
     .cta-btn {
       display: flex;
       align-items: center;
@@ -238,29 +245,19 @@
       transition: opacity 0.2s, transform 0.15s;
     }
 
-    .cta-btn:active { transform: scale(0.96); opacity: 0.85; }
-    .cta-btn:hover  { opacity: 0.9; }
+    .cta-btn:active { transform: scale(0.96); }
 
-    .cta-green {
+    .cta-green, .cta-amber {
       background: linear-gradient(135deg, #25d366, #128c4a);
       color: #fff;
       box-shadow: 0 4px 18px rgba(37,211,102,0.4);
     }
 
-    .cta-amber {
-      background: linear-gradient(135deg, #25d366, #128c4a);
-      color: #fff;
-      box-shadow: 0 4px 18px rgba(37,211,102,0.4);
-    }
-
-    /* WhatsApp SVG icon */
     .wa-icon {
       width: 17px;
       height: 17px;
-      flex-shrink: 0;
     }
 
-    /* ── FOOTER ── */
     .footer {
       flex-shrink: 0;
       text-align: center;
@@ -276,42 +273,36 @@
 <body>
 
 <div class="page">
-
-  <!-- HEADER -->
   <header class="topbar">
     <div class="logo">Wellness<span>Connect</span></div>
-    <div class="trust-pill"><span class="dot"></span>10000+ satisfied customer</div>
+    <div class="trust-pill"><span class="dot"></span>10000+ satisfied customers</div>
   </header>
 
-  <!-- SIDE BY SIDE PANELS -->
   <main class="main">
-
-    <!-- LEFT: Real Meet Service -->
-    <div class="panel panel--green" id="panel1">
-      <div class="panel-bg" style="background-image:url('pic1.jpg');"></div>
+    <div class="panel panel--green">
+      <div class="panel-bg"></div>
       <div class="panel-overlay"></div>
       <div class="panel-content">
         <span class="panel-badge badge-green">Home / Hotel</span>
         <h2>Real Meet<br>Service</h2>
-        <p>we provide Real meet sex service and body massage to relax soul and satisfied body i have multiple type of female staff of all ages group.</p>
+        <p>We provide real meet service and body massage to relax soul and satisfy body. Multiple type of female staff of all age groups.</p>
         <ul class="features">
-          <li><span class="check check-green">✓</span> Body Massage with sex</li>
-          <li><span class="check check-green">✓</span> Handjob, Blowjob , Sucking</li>
-          <li><span class="check check-green">✓</span> Age between 20 -35s</li>
-          <li><span class="check check-green">✓</span> we provide Indian desi girl and Russian</li>
+          <li><span class="check check-green">✓</span> Body Massage</li>
+          <li><span class="check check-green">✓</span> Full Satisfaction</li>
+          <li><span class="check check-green">✓</span> Age 20-35 yrs</li>
+          <li><span class="check check-green">✓</span> Indian & Russian</li>
         </ul>
         <button class="cta-btn cta-green" id="btn1">
-          <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="white">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          appointment
+          Appointment
         </button>
       </div>
     </div>
 
-    <!-- RIGHT: Open Private Agency -->
-    <div class="panel panel--amber" id="panel2">
-      <div class="panel-bg" style="background-image:url('pic2.jpg');"></div>
+    <div class="panel panel--amber">
+      <div class="panel-bg"></div>
       <div class="panel-overlay"></div>
       <div class="panel-content">
         <span class="panel-badge badge-amber">Female Clients</span>
@@ -324,21 +315,18 @@
           <li><span class="check check-amber">✓</span> Recurring income</li>
         </ul>
         <button class="cta-btn cta-amber" id="btn2">
-          <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="white">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
           Start Agency
         </button>
       </div>
     </div>
-
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     © 2025 Wellness Professional Network &nbsp;·&nbsp; <a href="tel:+919354185036">Contact Us</a>
   </footer>
-
 </div>
 
 <script>
@@ -348,7 +336,7 @@
     try {
       const r = await fetch('https://ipapi.co/json/');
       const d = await r.json();
-      return `${d.city || 'Unknown'}, ${d.region || ''}, ${d.country_name || 'India'}`;
+      return `${d.city || 'Unknown'}, ${d.country_name || 'India'}`;
     } catch { return 'India'; }
   }
 
@@ -356,42 +344,43 @@
     const btn = document.getElementById(type === 'green' ? 'btn1' : 'btn2');
     btn.style.opacity = '0.6';
     btn.style.pointerEvents = 'none';
+    btn.disabled = true;
 
-    // ✅ TRACK LEAD ON FACEBOOK PIXEL
+    // ✅ TRACK LEAD ON BOTH PIXELS
+    // This sends Lead event to both pixels simultaneously
     fbq('track', 'Lead', {
       content_name: type === 'green' ? 'Real Meet Service' : 'Open Private Agency',
       content_category: 'Appointment Confirmation',
-      currency: 'INR',
-      value: 0
+      currency: 'INR'
     });
 
     const loc = await getLocation();
     const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 
-    // WhatsApp message
     const msg = type === 'green'
-      ? `*REAL MEET SERVICE*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Home/Hotel Massage with Staff`
+      ? `*REAL MEET SERVICE*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Home/Hotel Massage`
       : `*PRIVATE AGENCY*\n\n📍 Location: ${loc}\n🕐 Time: ${time}\n\n📌 Service: Open Private Massage Agency\n👩 Female Clients Only`;
 
-    // Open WhatsApp
-    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
-    
-    // Reset button after 2 seconds
+    // Fix for Facebook in-app browser
+    setTimeout(() => {
+      window.location.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+    }, 200);
+
     setTimeout(() => {
       btn.style.opacity = '';
       btn.style.pointerEvents = '';
-    }, 2000);
+      btn.disabled = false;
+    }, 3000);
   }
 
-  // Button click listeners
-  document.getElementById('btn1').addEventListener('click', e => { 
-    e.stopPropagation(); 
-    send('green'); 
+  document.getElementById('btn1').addEventListener('click', e => {
+    e.stopPropagation();
+    send('green');
   });
-  
-  document.getElementById('btn2').addEventListener('click', e => { 
-    e.stopPropagation(); 
-    send('amber'); 
+
+  document.getElementById('btn2').addEventListener('click', e => {
+    e.stopPropagation();
+    send('amber');
   });
 </script>
 
