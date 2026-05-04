@@ -37,6 +37,7 @@
     .page {
       width: 100vw; height: 100vh;
       display: flex; flex-direction: column;
+      overflow: hidden;
     }
     .topbar {
       flex-shrink: 0;
@@ -66,7 +67,7 @@
     .main { flex: 1; display: flex; flex-direction: row; overflow: hidden; }
 
     /* Panel = column: image top, content bottom */
-    .panel { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+    .panel { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
     .panel--green { border-right: 1px solid rgba(255,255,255,0.12); }
 
     /* Image wrapper — fixed height, no gap */
@@ -93,12 +94,12 @@
 
     /* Content fills remaining space, centered */
     .panel-content {
-      flex: 1;
       display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+      align-items: center; justify-content: flex-start;
       text-align: center;
-      padding: 8px 12px 10px;
+      padding: 10px 12px 10px;
       gap: 5px;
+      overflow: hidden;
     }
 
     .panel-badge {
