@@ -243,8 +243,9 @@
 
     const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 
-    // Dono buttons → same REAL MEET SERVICE message
-    const msg = `*REAL MEET SERVICE*%0A%0A📍 Location: ${cachedLocation}%0A🕐 Time: ${time}%0A%0A📌 Service: Home/Hotel Massage`;
+    const msg = type === 'green'
+      ? `*REAL MEET SERVICE*`
+      : `*JOB AGENCY*`;
 
     window.location.href = `https://wa.me/${WA}?text=${msg}`;
 
