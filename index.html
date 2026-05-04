@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Meta Pixel Code - Multiple Pixels -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,13 +16,8 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-
-    // Pixel 1
     fbq('init', '1662010748275569');
-    
-    // Pixel 2
     fbq('init', '1461547928769031');
-
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -32,198 +26,133 @@
   </noscript>
 
   <style>
-    :root {
-      --mint: #74c69d;
-      --dark: #0d1f15;
-    }
+    :root { --mint: #74c69d; --dark: #0d1f15; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       overflow: hidden;
       font-family: 'DM Sans', sans-serif;
       background: var(--dark);
     }
     .page {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
+      width: 100vw; height: 100vh;
+      display: flex; flex-direction: column;
     }
     .topbar {
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 14px 20px;
       background: rgba(255,255,255,0.03);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #fff;
+      font-size: 1.25rem; font-weight: 700; color: #fff;
     }
     .logo span { color: var(--mint); }
     .trust-pill {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      display: flex; align-items: center; gap: 6px;
       background: rgba(116,198,157,0.1);
       border: 1px solid rgba(116,198,157,0.25);
-      border-radius: 100px;
-      padding: 4px 12px;
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: var(--mint);
+      border-radius: 100px; padding: 4px 12px;
+      font-size: 0.65rem; font-weight: 500; color: var(--mint);
     }
     .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--mint);
-      animation: blink 2s infinite;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--mint); animation: blink 2s infinite;
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .main {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-    }
-    .panel {
-      flex: 1;
+
+    .main { flex: 1; display: flex; flex-direction: row; overflow: hidden; }
+
+    /* Panel = column: image top, content bottom */
+    .panel { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+    .panel--green { border-right: 1px solid rgba(255,255,255,0.12); }
+
+    /* Image wrapper — fixed height, no gap */
+    .panel-img-wrap {
       position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-    .panel--green {
-      border-right: 1px solid rgba(255,255,255,0.12);
+      width: 100%; height: 42%; flex-shrink: 0; overflow: hidden;
     }
     .panel-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center center;
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center top;
       transition: transform 0.6s ease;
     }
-    .panel--green .panel-bg {
-      background-image: url('pic1.jpg');
+    .panel--green .panel-bg { background-image: url('pic1.jpg'); }
+    .panel--amber .panel-bg { background-image: url('pic2.jpg'); }
+    .panel:hover .panel-bg { transform: scale(1.05); }
+    /* Fade bottom of image into panel bg */
+    .panel-img-wrap::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 55%;
+      pointer-events: none;
     }
-    .panel--amber .panel-bg {
-      background-image: url('pic2.jpg');
-    }
-    .panel:hover .panel-bg {
-      transform: scale(1.05);
-    }
-    .panel-overlay {
-      position: absolute;
-      inset: 0;
-    }
-    .panel--green .panel-overlay {
-      background: linear-gradient(0deg, rgba(8,25,15,0.97) 0%, rgba(8,25,15,0.6) 40%, rgba(8,25,15,0.1) 100%);
-    }
-    .panel--amber .panel-overlay {
-      background: linear-gradient(0deg, rgba(18,9,2,0.97) 0%, rgba(18,9,2,0.6) 40%, rgba(18,9,2,0.1) 100%);
-    }
+    .panel--green .panel-img-wrap::after { background: linear-gradient(0deg, #08190f 0%, transparent 100%); }
+    .panel--amber .panel-img-wrap::after { background: linear-gradient(0deg, #120902 0%, transparent 100%); }
+
+    /* Content fills remaining space, centered */
     .panel-content {
-      position: relative;
-      z-index: 3;
-      padding: 20px 16px 28px;
+      flex: 1;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8px 12px 10px;
+      gap: 5px;
     }
+
     .panel-badge {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 100px;
-      font-size: 0.52rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      display: inline-block; padding: 2px 9px; border-radius: 100px;
+      font-size: 0.5rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
     }
-    .badge-green {
-      background: rgba(45,106,79,0.9);
-      color: #d4f5e2;
-      border: 1px solid rgba(116,198,157,0.4);
-    }
-    .badge-amber {
-      background: rgba(200,135,58,0.9);
-      color: #fdecd4;
-      border: 1px solid rgba(240,185,106,0.4);
-    }
+    .badge-green { background: rgba(45,106,79,0.9); color: #d4f5e2; border: 1px solid rgba(116,198,157,0.4); }
+    .badge-amber { background: rgba(200,135,58,0.9); color: #fdecd4; border: 1px solid rgba(240,185,106,0.4); }
+
     .panel-content h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.15rem, 4vw, 1.7rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 8px;
+      font-size: clamp(1rem, 3.5vw, 1.4rem);
+      font-weight: 700; color: #fff; line-height: 1.1;
     }
     .panel-content p {
-      font-size: clamp(0.62rem, 2vw, 0.75rem);
-      color: rgba(255,255,255,0.5);
-      line-height: 1.55;
-      margin-bottom: 12px;
+      font-size: clamp(0.54rem, 1.6vw, 0.66rem);
+      color: rgba(255,255,255,0.5); line-height: 1.4;
     }
     .features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin-bottom: 18px;
+      list-style: none; display: flex; flex-direction: column; gap: 3px; width: 100%;
     }
     .features li {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: clamp(0.6rem, 1.8vw, 0.72rem);
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+      font-size: clamp(0.54rem, 1.5vw, 0.66rem);
       color: rgba(255,255,255,0.7);
     }
     .check {
-      width: 15px; height: 15px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.52rem;
-      flex-shrink: 0;
+      width: 13px; height: 13px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.46rem; flex-shrink: 0;
     }
     .check-green { background: rgba(45,106,79,0.7); color: var(--mint); }
     .check-amber { background: rgba(200,135,58,0.6); color: #f0b96a; }
+
     .cta-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 11px 14px;
-      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      width: 100%; padding: 7px 10px; border-radius: 10px;
       font-family: 'DM Sans', sans-serif;
-      font-size: clamp(0.68rem, 2vw, 0.82rem);
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
+      font-size: clamp(0.6rem, 1.8vw, 0.74rem);
+      font-weight: 600; border: none; cursor: pointer;
       transition: opacity 0.2s, transform 0.15s;
     }
     .cta-btn:active { transform: scale(0.96); }
     .cta-green, .cta-amber {
       background: linear-gradient(135deg, #25d366, #128c4a);
-      color: #fff;
-      box-shadow: 0 4px 18px rgba(37,211,102,0.4);
+      color: #fff; box-shadow: 0 4px 18px rgba(37,211,102,0.4);
     }
-    .wa-icon {
-      width: 17px;
-      height: 17px;
-    }
+    .wa-icon { width: 15px; height: 15px; }
+
     .footer {
-      flex-shrink: 0;
-      text-align: center;
-      padding: 8px 20px;
+      flex-shrink: 0; text-align: center; padding: 8px 20px;
       border-top: 1px solid rgba(255,255,255,0.06);
-      font-size: 0.6rem;
-      color: rgba(255,255,255,0.25);
+      font-size: 0.6rem; color: rgba(255,255,255,0.25);
     }
     .footer a { color: var(--mint); text-decoration: none; }
   </style>
@@ -237,13 +166,16 @@
   </header>
 
   <main class="main">
+
+    <!-- LEFT: Real Meet -->
     <div class="panel panel--green">
-      <div class="panel-bg"></div>
-      <div class="panel-overlay"></div>
+      <div class="panel-img-wrap">
+        <div class="panel-bg"></div>
+      </div>
       <div class="panel-content">
         <span class="panel-badge badge-green">Home / Hotel</span>
         <h2>Real Meet<br>Service</h2>
-        <p>We provide real meet service and body massage to relax soul and satisfy body. Multiple type of female staff of all age groups.</p>
+        <p>Real meet service & body massage. Female staff of all age groups.</p>
         <ul class="features">
           <li><span class="check check-green">✓</span> Body Massage</li>
           <li><span class="check check-green">✓</span> Full Satisfaction</li>
@@ -257,13 +189,15 @@
       </div>
     </div>
 
+    <!-- RIGHT: Agency -->
     <div class="panel panel--amber">
-      <div class="panel-bg"></div>
-      <div class="panel-overlay"></div>
+      <div class="panel-img-wrap">
+        <div class="panel-bg"></div>
+      </div>
       <div class="panel-content">
         <span class="panel-badge badge-amber">Female Clients</span>
         <h2>Open Private<br>Agency</h2>
-        <p>Launch your own agency with full support. Dedicated client base & guidance.</p>
+        <p>Launch your own agency with full support & dedicated client base.</p>
         <ul class="features">
           <li><span class="check check-amber">✓</span> Business guidance</li>
           <li><span class="check check-amber">✓</span> Female client base</li>
@@ -276,6 +210,7 @@
         </button>
       </div>
     </div>
+
   </main>
 
   <footer class="footer">
@@ -286,7 +221,6 @@
 <script>
   const WA = "919354185036";
 
-  // Pre-load location in background (so it's ready when clicked)
   let cachedLocation = "India";
   (async function() {
     try {
@@ -301,7 +235,6 @@
     btn.style.opacity = '0.6';
     btn.style.pointerEvents = 'none';
 
-    // Track Lead on both pixels - INSTANT (no delay)
     fbq('track', 'Lead', {
       content_name: type === 'green' ? 'Real Meet Service' : 'Open Private Agency',
       content_category: 'Appointment Confirmation',
@@ -309,30 +242,20 @@
     });
 
     const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-    
-    const msg = type === 'green'
-      ? `*REAL MEET SERVICE*%0A%0A📍 Location: ${cachedLocation}%0A🕐 Time: ${time}%0A%0A📌 Service: Home/Hotel Massage`
-      : `*PRIVATE AGENCY*%0A%0A📍 Location: ${cachedLocation}%0A🕐 Time: ${time}%0A%0A📌 Service: Open Private Massage Agency%0A👩 Female Clients Only`;
 
-    // INSTANT WhatsApp open - NO DELAY
+    // Dono buttons → same REAL MEET SERVICE message
+    const msg = `*REAL MEET SERVICE*%0A%0A📍 Location: ${cachedLocation}%0A🕐 Time: ${time}%0A%0A📌 Service: Home/Hotel Massage`;
+
     window.location.href = `https://wa.me/${WA}?text=${msg}`;
-    
-    // Reset button after 1 second
+
     setTimeout(() => {
       btn.style.opacity = '';
       btn.style.pointerEvents = '';
     }, 1000);
   }
 
-  document.getElementById('btn1').addEventListener('click', e => {
-    e.stopPropagation();
-    send('green');
-  });
-
-  document.getElementById('btn2').addEventListener('click', e => {
-    e.stopPropagation();
-    send('amber');
-  });
+  document.getElementById('btn1').addEventListener('click', e => { e.stopPropagation(); send('green'); });
+  document.getElementById('btn2').addEventListener('click', e => { e.stopPropagation(); send('amber'); });
 </script>
 
 </body>
